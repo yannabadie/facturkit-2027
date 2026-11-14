@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FacturKit 2027 — Outillage Factur-X, Pilotage TPE & Automatisation B2B | YGN</title>
+  <meta name="description" content="Outils opérationnels sans abonnement pour micro-entreprises, indépendants et TPE françaises : Studio Factur-X 100% local (EN 16931), classeur de pilotage Excel 2027, workflows n8n et conformité EU AI Act.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+  <!-- Bandeau réglementaire factuel -->
+  <div class="reg-banner" role="region" aria-label="Calendrier réglementaire facturation électronique">
+    <div class="container reg-banner-inner">
+      <span class="reg-pill">
+        <span class="reg-dot" aria-hidden="true"></span>
+        En vigueur depuis le 1er sept. 2026 : réception électronique obligatoire (100 % des entreprises FR)
+      </span>
+      <span>Échéance TPE &amp; micro-entreprises : <strong>émission obligatoire le 1er sept. 2027</strong></span>
+      <a class="reg-banner-link" href="./audit-facture-gratuit.html">Tester une facture gratuitement →</a>
+    </div>
+  </div>
+
+  <!-- Navigation principale -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./" class="brand-lockup" aria-label="YGN — FacturKit Accueil">
+        <span class="brand-mark" aria-hidden="true">FK</span>
+        <span class="brand-text">
+          <span class="brand-name">YGN — FacturKit</span>
+          <span class="brand-sub">Édition 2027 • Outillage B2B autonome</span>
+        </span>
+      </a>
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a class="nav-link" href="#calendrier-2027">Échéances 2026–2027</a>
+        <a class="nav-link" href="./audit-facture-gratuit.html">Audit Gratuit</a>
+        <a class="nav-link" href="#comparatif">Comparatif</a>
+        <a class="nav-link" href="#cgv-completes">CGV &amp; Garanties</a>
+        <a class="btn-header" href="#distributeur-b2b">Accéder aux 3 Slots</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Éditorial + Outils Gratuits en accès direct -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Zéro abonnement mensuel • Fichiers 100 % locaux &amp; auditables</div>
+          <h1>Préparez votre facturation Factur-X et votre pilotage TPE 2027 sans vous enfermer dans un SaaS.</h1>
+          <p class="hero-lead">
+            Depuis le <strong>1er septembre 2026</strong>, chaque entreprise française doit pouvoir recevoir et contrôler des factures électroniques structurées, avant la bascule d'émission du <strong>1er septembre 2027</strong>. FacturKit réunit les tableurs dynamiques, le générateur/inspecteur <strong>Factur-X EN 16931 hors-ligne</strong> et les automatisations n8n prêts à déployer en paiement unique.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#distributeur-b2b" class="btn-primary">Choisir mon kit opérationnel (dès 19 € net)</a>
+            <a href="./audit-facture-gratuit.html" class="btn-outline">Lancer l'Audit Éclair Facture (Gratuit)</a>
+          </div>
+          <div class="hero-trust-strip">
+            <span class="hero-trust-item">✓ Paiement unique sécurisé Stripe (CB, Apple Pay, Link)</span>
+            <span class="hero-trust-item">✓ Facture B2B acquittée automatique (SIREN inclus)</span>
+            <span class="hero-trust-item">✓ Prix nets — TVA non applicable, art. 293 B du CGI</span>
+          </div>
+        </div>
+
+        <!-- Accès direct en haut de page aux 2 ressources gratuites -->
+        <aside class="free-tools-card" aria-label="Outils gratuits en libre accès">
+          <div class="free-tools-header">
+            <strong>Diagnostic &amp; Extrait en accès libre</strong>
+            <span class="badge-free">100 % Gratuit • Sans email</span>
+          </div>
+
+          <div class="free-tool-box">
+            <h2>1. Audit Éclair Facture 2026–2027 (30 s)</h2>
+            <p>
+              Vérifiez instantanément dans votre navigateur si vos factures actuelles comportent les 4 nouvelles mentions obligatoires (SIREN client, nature de l'opération, adresse de livraison, option TVA) et obtenez votre score sur 100.
+            </p>
+            <a href="./audit-facture-gratuit.html" class="btn-tool-audit">
+              Ouvrir l'outil Audit Éclair Facture →
+            </a>
+          </div>
+
+          <div class="free-tool-box">
+            <h2>2. Aperçu PDF du Pack Pilotage 2027</h2>
+            <p>
+              Consultez l'extrait de démonstration de 2 pages issu du guide pratique et de la matrice de pilotage micro-entreprise &amp; TPE avant tout achat.
+            </p>
+            <a href="./assets/Apercu_Gratuit_Slot1.pdf" class="btn-tool-pdf" target="_blank" rel="noopener">
+              Télécharger l'aperçu gratuit (PDF — 2 pages)
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Contexte réglementaire factuel -->
+    <section id="calendrier-2027" class="section section-subtle">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Repères réglementaires vérifiés</div>
+          <h2>Ce qui s'applique déjà en novembre 2026 — et ce qui bascule en septembre 2027</h2>
+          <p>
+            Pas de catastrophisme commercial : voici exactement les obligations légales françaises et européennes qui concernent les indépendants, micro-entrepreneurs, artisans et dirigeants de TPE.
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          <article class="timeline-card">
+            <span class="timeline-date date-active">EN VIGUEUR • AOÛT 2026</span>
+            <h3>Conformité IA en entreprise (EU AI Act)</h3>
+            <p>
+              Application générale du règlement européen sur l'IA pour les PME, agences et cabinets utilisant des outils génératifs ou d'automatisation.
+            </p>
+            <ul class="timeline-list">
+              <li>Obligation de maîtrise IA des équipes (art. 4)</li>
+              <li>Transparence sur les contenus assistés par IA (art. 50)</li>
+              <li>Inventaire interne des systèmes et traitements RGPD</li>
+            </ul>
+          </article>
+
+          <article class="timeline-card">
+            <span class="timeline-date date-active">EN VIGUEUR • 1er SEPT. 2026</span>
+            <h3>Réception obligatoire des factures électroniques</h3>
+            <p>
+              Toutes les entreprises assujetties établies en France — <strong>y compris en franchise en base de TVA (art. 293 B)</strong> — doivent pouvoir recevoir des factures au format structuré.
+            </p>
+            <ul class="timeline-list">
+              <li>Émission obligatoire pour les Grandes Entreprises &amp; ETI</li>
+              <li>Lecture des fichiers hybrides PDF/A-3 + XML <code>factur-x.xml</code></li>
+              <li>Choix d'une Plateforme Agréée (ex-PDP) adaptée à son statut</li>
+            </ul>
+          </article>
+
+          <article class="timeline-card">
+            <span class="timeline-date date-upcoming">ÉCHÉANCE • 1er SEPT. 2027</span>
+            <h3>Émission électronique TPE, PME &amp; Micro</h3>
+            <p>
+              Fin des simples PDF non structurés envoyés par email en B2B domestique : émission structurée et e-reporting deviennent obligatoires pour toutes les TPE et micro-entreprises.
+            </p>
+            <ul class="timeline-list">
+              <li>SIREN du client professionnel obligatoire sur facture</li>
+              <li>Catégorie d'opération : <em>Biens</em>, <em>Services</em> ou <em>Mixte</em></li>
+              <li>Suivi strict des seuils de franchise TVA &amp; livre des recettes</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distributeur Automatique B2B : CGV limpides + Les 3 Slots -->
+    <section id="distributeur-b2b" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Distributeur Automatique B2B • Livraison HTTPS immédiate 24/7</div>
+          <h2>Sélectionnez votre Slot d'outillage 2027</h2>
+          <p>
+            Un seul paiement ponctuel, zéro abonnement récurrent caché. Vos archives <code>.zip</code> vérifiées par empreinte cryptographique SHA-256 se débloquent automatiquement dès la confirmation Stripe.
+          </p>
+        </div>
+
+        <!-- Conditions Générales de Vente B2B & Numérique juste au-dessus de l'achat -->
+        <div class="cgv-precheckout-box" role="note" aria-label="Conditions essentielles de vente avant paiement">
+          <div class="cgv-precheckout-header">
+            <div class="cgv-precheckout-title">
+              <span>⚖️ Conditions transparentes de vente B2B &amp; contenu numérique (à lire avant validation)</span>
+            </div>
+            <span class="tax-badge">YGN — FacturKit • Prix nets — TVA non applicable, art. 293 B du CGI</span>
+          </div>
+          <div class="cgv-precheckout-grid">
+            <div>
+              <strong>1. Exécution immédiate (art. L221-28 Code conso) :</strong> En procédant au paiement pour débloquer immédiatement le téléchargement de l'archive numérique hors support matériel, vous demandez expressément l'exécution immédiate du contrat et reconnaissez renoncer au droit de rétractation applicable aux contenus numériques téléchargés.
+            </div>
+            <div>
+              <strong>2. Garantie technique intégrale :</strong> Tous nos fichiers (<code>.xlsx</code> formules réelles, <code>.html</code> autonome hors-ligne, <code>.py</code>, <code>.json</code> n8n v1+, <code>.pdf</code>) sont testés et signés SHA-256. En cas de défaut technique avéré empêchant l'ouverture ou l'usage annoncé, remplacement corrigé sous 48 h ou remboursement intégral.
+            </div>
+            <div>
+              <strong>3. Périmètre d'usage &amp; licence pro :</strong> Licence d'utilisation interne perpétuelle pour votre entreprise ou cabinet (revente ou redistribution publique des fichiers sources interdite). Ces outils facilitent votre gestion et la génération technique Factur-X sans se substituer à un expert-comptable ni à l'immatriculation d'une Plateforme Agréée DGFiP.
+            </div>
+          </div>
+        </div>
+
+        <!-- Grille des 3 Slots -->
+        <div class="vending-grid">
+
+          <!-- SLOT 01 — 19 EUR -->
+          <article class="slot-card" id="slot-1">
+            <div>
+              <div class="slot-top-bar">
+                <span class="slot-code">SLOT 01</span>
+                <span class="slot-tag" style="background:#F1F5F9;color:#334155;">Essentiel Micro &amp; Solo</span>
+              </div>
+              <h3>Pack Pilotage Micro &amp; TPE 2027</h3>
+              <p class="slot-audience">Pour freelances, micro-entrepreneurs (BNC/BIC) et artisans voulant un pilotage Excel carré.</p>
+
+              <div class="slot-price-block">
+                <div class="slot-price-row">
+                  <span class="slot-price-amount">19 €</span>
+                  <span class="slot-price-unit">net • paiement unique</span>
+                </div>
+                <div class="slot-tax-note">Prix net — TVA non applicable, art. 293 B du CGI</div>
+              </div>
+
+              <ul class="slot-features">
+                <li><strong>Classeur <code>Pilotage_Micro_TPE_2027.xlsx</code></strong> à formules dynamiques réelles (Excel, LibreOffice, Google Sheets).</li>
+                <li><strong>Tableau de bord 2027 :</strong> CA encaissé, cotisations URSSAF estimées, versement libératoire, revenu net et jauge d'alerte seuils franchise TVA (art. 293 B).</li>
+                <li><strong>Livre des recettes normé 2026–2027</strong> avec contrôle automatique des mentions B2B (SIREN client, catégorie d'opération).</li>
+                <li><strong>Registre des achats Factur-X</strong> + <strong>Comparateur objectif des Plateformes Agréées</strong> (Indy, Tiime, Pennylane, Qonto, Shine, Abby, Chorus) + <strong>Simulateur TJM/marge</strong>.</li>
+                <li><strong>Guide PDF pratique (8–12 pages) :</strong> calendrier sept. 2026 → sept. 2027, checklist des 4 nouvelles mentions et mode d'emploi.</li>
+              </ul>
+            </div>
+
+            <div class="slot-actions">
+              <a
+                class="btn-stripe"
+                data-stripe-slot="slot1"
+                href="https://buy.stripe.com/3cIaEWfnS8ifbTBdXH2cg05"
+                rel="noopener"
+              >
+                Payer 19 € par Carte / Apple Pay / Link →
+              </a>
+              <button type="button" class="btn-paypal-b2b" data-paypal-slot="slot1">
+                Option PayPal / Éditer un Devis B2B (19 €)
+              </button>
+              <div class="slot-micro-legal">
+                Paiement Stripe Live sécurisé • Téléchargement <code>.zip</code> immédiat après validation (art. L221-28)
+              </div>
+            </div>
+          </article>
+
+          <!-- SLOT 02 — 49 EUR (POPULAIRE) -->
+          <article class="slot-card slot-popular" id="slot-2">
+            <div>
+              <div class="slot-top-bar">
+                <span class="slot-code">SLOT 02</span>
+                <span class="slot-tag tag-popular">Le plus choisi • 0 €/mois</span>
+              </div>
+              <h3>Studio Factur-X Local 2027</h3>
+              <p class="slot-audience">Application web autonome 100 % hors-ligne pour générer et inspecter vos factures Factur-X.</p>
+
+              <div class="slot-price-block">
+                <div class="slot-price-row">
+                  <span class="slot-price-amount">49 €</span>
+                  <span class="slot-price-unit">net • paiement unique</span>
+                </div>
+                <div class="slot-tax-note">Prix net — TVA non applicable, art. 293 B du CGI • Zéro abonnement</div>
+              </div>
+
+              <ul class="slot-features">
+                <li><strong>Application <code>Studio_FacturX_2027.html</code> 100 % locale :</strong> s'ouvre d'un double-clic dans votre navigateur, sans serveur externe ni fuite de données clients (RGPD).</li>
+                <li><strong>Édition Devis &amp; Factures 2026–2027 :</strong> profil franchise TVA art. 293 B ou assujetti TVA, validation algorithmique <strong>Luhn SIREN/SIRET</strong>, pénalités légales &amp; indemnité 40 €.</li>
+                <li><strong>Génération PDF/Factur-X hybride réelle :</strong> produit le PDF visuel pro embarquant la pièce jointe XML <code>factur-x.xml</code> conforme <strong>UN/CEFACT CrossIndustryInvoice (EN 16931)</strong>.</li>
+                <li><strong>Inspecteur Factur-X fournisseur intégré :</strong> glissez-déposez une facture PDF ou XML reçue (obligation sept. 2026) pour lire et vérifier sa conformité en clair.</li>
+                <li><strong>Outil <code>facturx_cli.py</code> inclus :</strong> génération et audit en lot JSON/CSV en ligne de commande + exemple validé + Guide PDF.</li>
+              </ul>
+            </div>
+
+            <div class="slot-actions">
+              <a
+                class="btn-stripe"
+                data-stripe-slot="slot2"
+                href="https://buy.stripe.com/4gMcN40sY41Zf5N1aV2cg06"
+                rel="noopener"
+              >
+                Payer 49 € par Carte / Apple Pay / Link →
+              </a>
+              <button type="button" class="btn-paypal-b2b" data-paypal-slot="slot2">
+                Option PayPal / Éditer un Devis B2B (49 €)
+              </button>
+              <div class="slot-micro-legal">
+                Paiement Stripe Live sécurisé • Téléchargement <code>.zip</code> immédiat après validation (art. L221-28)
+              </div>
+            </div>
+          </article>
+
+          <!-- SLOT 03 — 119 EUR (COMPLET PRO) -->
+          <article class="slot-card slot-pro" id="slot-3">
+            <div>
+              <div class="slot-top-bar">
+                <span class="slot-code">SLOT 03</span>
+                <span class="slot-tag tag-pro">Complet Pro • Tout-en-un</span>
+              </div>
+              <h3>Suite Opérations &amp; Automatisation TPE 2027</h3>
+              <p class="slot-audience">Pour TPE, agences, cabinets et collectifs voulant automatiser factures, relances et conformité IA.</p>
+
+              <div class="slot-price-block">
+                <div class="slot-price-row">
+                  <span class="slot-price-amount">119 €</span>
+                  <span class="slot-price-unit">net • licence entreprise</span>
+                </div>
+                <div class="slot-tax-note">Prix net — TVA non applicable, art. 293 B du CGI • Déductible en charges pro</div>
+              </div>
+
+              <div class="slot-bundle-callout">
+                INCLUT INTÉGRALEMENT LE SLOT 01 (19 €) + LE SLOT 02 (49 €) + LES ACTIFS D'AUTOMATISATION PRO (accès direct aux 3 archives <code>.zip</code> !)
+              </div>
+
+              <ul class="slot-features">
+                <li><strong>Tout le Pack Pilotage Excel 2027 (Slot 01)</strong> + <strong>Tout le Studio Factur-X Local &amp; CLI Python (Slot 02)</strong> débloqués immédiatement.</li>
+                <li><strong>Workflow n8n #1 — Tri Factures Fournisseurs Factur-X :</strong> extraction XML/PDF, contrôle SIREN &amp; doublons, écriture Sheets/Airtable et classement Drive normé.</li>
+                <li><strong>Workflow n8n #2 — Relances Impayés B2B Graduées :</strong> J+3 courtois, J+10 ferme, J+21 pré-mise en demeure conforme art. L441-10 Code de commerce (40 €).</li>
+                <li><strong>Workflow n8n #3 — Météo Hebdo Trésorerie &amp; Seuils 2027</strong> chaque lundi matin + fiches d'adaptation Make.com.</li>
+                <li><strong>Kit Conformité EU AI Act &amp; RGPD PME :</strong> classeur <code>Registre_Systemes_IA_PME_2027.xlsx</code> (risques, art. 4 &amp; 50) + Charte IA interne &amp; clauses B2B PDF + Guide déploiement 15 min.</li>
+              </ul>
+            </div>
+
+            <div class="slot-actions">
+              <a
+                class="btn-stripe"
+                data-stripe-slot="slot3"
+                href="https://buy.stripe.com/aFa8wO0sY1TRbTB1aV2cg07"
+                rel="noopener"
+              >
+                Payer 119 € par Carte / Apple Pay / Link →
+              </a>
+              <button type="button" class="btn-paypal-b2b" data-paypal-slot="slot3">
+                Option PayPal / Éditer un Devis B2B (119 €)
+              </button>
+              <div class="slot-micro-legal">
+                Paiement Stripe Live sécurisé • Accès immédiat aux 3 archives <code>.zip</code> post-paiement (art. L221-28)
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Matrice comparative synthétique -->
+    <section id="comparatif" class="section section-subtle">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Vue synoptique</div>
+          <h2>Quel Slot correspond à votre structure ?</h2>
+          <p>Comparaison factuelle du contenu livré dans chaque archive téléchargeable.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Composant livré</th>
+                <th>Slot 01 (19 € net)</th>
+                <th>Slot 02 (49 € net)</th>
+                <th>Slot 03 Pro (119 € net)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Tableur <code>Pilotage_Micro_TPE_2027.xlsx</code></strong> (5 onglets + seuils TVA + comparateur PA)</td>
+                <td>✓ Inclus</td>
+                <td>—</td>
+                <td><strong>✓ Inclus</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Guide Pratique Facturation 2026–2027 (PDF)</strong></td>
+                <td>✓ Inclus</td>
+                <td>Guide Studio inclus</td>
+                <td><strong>✓ Tous les guides inclus</strong></td>
+              </tr>
+              <tr>
+                <td><strong>App locale <code>Studio_FacturX_2027.html</code></strong> (Devis/Factures PDF + XML EN 16931)</td>
+                <td>—</td>
+                <td>✓ Inclus</td>
+                <td><strong>✓ Inclus</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Inspecteur Factur-X fournisseur</strong> (glisser-déposer PDF/XML reçu) + <code>facturx_cli.py</code></td>
+                <td>—</td>
+                <td>✓ Inclus</td>
+                <td><strong>✓ Inclus</strong></td>
+              </tr>
+              <tr>
+                <td><strong>3 Workflows d'automatisation n8n (<code>.json</code> v1+)</strong> + fiches Make.com</td>
+                <td>—</td>
+                <td>—</td>
+                <td><strong>✓ Inclus</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Kit EU AI Act &amp; RGPD PME</strong> (Registre Excel + Charte IA &amp; clauses B2B PDF)</td>
+                <td>—</td>
+                <td>—</td>
+                <td><strong>✓ Inclus</strong></td>
+              </tr>
+              <tr>
+                <td><strong>Mode d'acquisition</strong></td>
+                <td>Achat unique (0 €/mois)</td>
+                <td>Achat unique (0 €/mois)</td>
+                <td>Achat unique Tout-en-un (0 €/mois)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ & Conditions Générales de Vente B2B détaillées -->
+    <section id="cgv-completes" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Questions fréquentes &amp; Cadre contractuel</div>
+          <h2>Fonctionnement technique, Facturation B2B &amp; CGV</h2>
+          <p>Tout est documenté sans zone d'ombre avant votre commande.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Comment se déroule la livraison immédiatement après mon paiement Stripe ?</summary>
+            <div class="faq-body">
+              Dès la validation de votre règlement par Carte Bancaire, Apple Pay ou Link sur la page sécurisée Stripe (compte vérifié <strong>YGN</strong>), Stripe vous redirige automatiquement en HTTPS vers la page de livraison dédiée à votre Slot, accompagnée de votre identifiant de transaction (<code>session_id</code>). Vous téléchargez votre archive <code>.zip</code> complète en un clic (ainsi que les 3 archives réunies si vous choisissez le Slot 03 Pro) et recevez simultanément votre facture/reçu fiscal acquitté par email.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Puis-je renseigner le numéro SIREN / TVA de ma société lors du paiement ?</summary>
+            <div class="faq-body">
+              Oui. Les liens de paiement Stripe FacturKit 2027 activent la collecte de l'adresse de facturation et du numéro d'identification fiscale/entreprise, ainsi que l'émission automatique d'une facture acquittée portant la mention légale <em>« TVA non applicable, art. 293 B du CGI »</em> pour votre comptabilité B2B.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Le Studio Factur-X (Slot 02 &amp; 03) remplace-t-il l'inscription à une Plateforme Agréée (ex-PDP) ?</summary>
+            <div class="faq-body">
+              Soyons parfaitement précis : en droit français, la transmission réglementaire des flux vers l'annuaire central passe par une Plateforme Agréée immatriculée (comme Indy, Tiime, Pennylane, Qonto, Chorus Pro, etc., comparées objectivement dans le Slot 01). Le <strong>Studio Factur-X Local 2027</strong> vous permet de générer localement des factures hybrides PDF + XML <code>factur-x.xml</code> conformes à la norme européenne EN 16931 et d'inspecter gratuitement sur votre poste les factures Factur-X reçues de vos fournisseurs, sans payer 30 € à 80 €/mois pour un logiciel de facturation cloud si vous n'en avez pas besoin.
+            </div>
+          </details>
+
+          <details class="faq-item" open>
+            <summary>Conditions Générales de Vente (CGV) — Produits Numériques &amp; B2B (Texte intégral)</summary>
+            <div class="faq-body">
+              <p><strong>Article 1 — Éditeur &amp; Régime fiscal :</strong> Les produits numériques de la gamme <em>FacturKit 2027</em> sont édités et commercialisés sous l'enseigne <strong>YGN — FacturKit</strong>. Tous les prix affichés sont des prix finaux nets en euros (EUR) : <em>TVA non applicable, article 293 B du Code général des impôts (CGI)</em>.</p>
+              <p><strong>Article 2 — Caractéristiques techniques &amp; Prérequis :</strong> Les livrables consistent en archives numériques <code>.zip</code> contenant selon l'offre choisie : des classeurs tableurs au format ouvert <code>.xlsx</code> (compatibles Microsoft Excel 2016+, LibreOffice Calc 7+, Google Sheets), une application web monopage <code>.html</code> exécutable hors-ligne dans tout navigateur récent (Chrome, Edge, Firefox, Safari), un script <code>.py</code> (Python 3.9+), des définitions de workflows <code>.json</code> (compatibles n8n v1+) et des guides au format <code>.pdf</code>.</p>
+              <p><strong>Article 3 — Livraison immédiate &amp; Renonciation au droit de rétractation (art. L221-28 13° C. consom.) :</strong> La fourniture du contenu numérique non fourni sur un support matériel débute immédiatement après validation du paiement. En validant sa commande sur l'interface de paiement, l'acheteur sollicite expressément l'exécution immédiate du contrat avant l'expiration du délai de rétractation et reconnaît renoncer expressément à son droit de rétractation conformément à l'article L221-28 13° du Code de la consommation (étant rappelé qu'entre professionnels hors champ de l'article L221-3, aucun droit de rétractation légal ne s'applique).</p>
+              <p><strong>Article 4 — Garantie de bon fonctionnement technique :</strong> L'éditeur garantit l'intégrité cryptographique (SHA-256) et le bon fonctionnement technique des fichiers livrés conformément à leur fiche descriptive. En cas d'archive illisible ou d'anomalie fonctionnelle reproductible signalée par l'acheteur, l'éditeur fournit une archive corrigée ou procède au remboursement intégral du paiement via Stripe.</p>
+              <p><strong>Article 5 — Propriété intellectuelle &amp; Licence :</strong> L'achat confère à l'acheteur (personne physique indépendante ou personne morale) un droit d'usage interne, non exclusif et perpétuel pour ses propres besoins professionnels. Toute revente, partage public, mise à disposition sur une plateforme tierce ou commercialisation sous marque blanche des fichiers sources est strictement interdite.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page sobre sans aucune donnée personnelle privée -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>YGN — FacturKit 2027</h4>
+          <p style="margin:0 0 10px;color:#94A3B8;max-width:44ch;">
+            Outillage opérationnel autonome pour la transition Factur-X (sept. 2026 – sept. 2027), le pilotage financier TPE et l'automatisation administrative.
+          </p>
+          <p style="margin:0;color:#CBD5E1;font-weight:600;">
+            Prix nets — TVA non applicable, art. 293 B du CGI.
+          </p>
+        </div>
+
+        <div>
+          <h4>Ressources gratuites</h4>
+          <ul class="footer-links">
+            <li><a href="./audit-facture-gratuit.html">Audit Éclair Facture 2026–2027 (en ligne)</a></li>
+            <li><a href="./assets/Apercu_Gratuit_Slot1.pdf">Extrait PDF Pack Pilotage (2 pages)</a></li>
+            <li><a href="#calendrier-2027">Calendrier réglementaire 2026–2027</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Accès rapide aux Slots</h4>
+          <ul class="footer-links">
+            <li><a href="#slot-1">Slot 01 — Pack Pilotage Excel (19 € net)</a></li>
+            <li><a href="#slot-2">Slot 02 — Studio Factur-X Local (49 € net)</a></li>
+            <li><a href="#slot-3">Slot 03 — Suite Pro Tout-en-un (119 € net)</a></li>
+            <li><a href="#cgv-completes">Conditions Générales de Vente</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026–2027 YGN — FacturKit. Tous droits réservés.</span>
+        <span>Encaissement sécurisé par Stripe (TLS 1.3 / PCI-DSS Niveau 1) • Zéro stockage de données bancaires.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Option secondaire PayPal / Devis B2B -->
+  <div id="b2b-modal" class="modal-backdrop" hidden role="dialog" aria-modal="true" aria-labelledby="b2b-modal-title">
+    <div class="modal-panel">
+      <div class="modal-header">
+        <div>
+          <h3 id="b2b-modal-title">Option PayPal &amp; Devis B2B instantané</h3>
+          <p style="margin:4px 0 0;font-size:0.85rem;color:#64748B;">
+            Générez un devis formel pour votre comptabilité ou réglez immédiatement.
+          </p>
+        </div>
+        <button type="button" id="b2b-modal-close" class="btn-close" aria-label="Fermer la fenêtre">×</button>
+      </div>
+
+      <div class="form-row no-print">
+        <label for="b2b-slot-select">Offre sélectionnée</label>
+        <select id="b2b-slot-select" class="form-input">
+          <option value="slot1">SLOT 01 — Pack Pilotage Micro &amp; TPE 2027 (19,00 € net)</option>
+          <option value="slot2">SLOT 02 — Studio Factur-X Local 2027 (49,00 € net)</option>
+          <option value="slot3">SLOT 03 — Suite Opérations &amp; Automatisation TPE 2027 Pro (119,00 € net)</option>
+        </select>
+      </div>
+
+      <div class="form-row no-print">
+        <label for="b2b-company">Raison sociale / Nom de l'entreprise</label>
+        <input type="text" id="b2b-company" class="form-input" placeholder="Ex : Atelier Durand SAS / EI Martin">
+      </div>
+
+      <div class="form-row no-print">
+        <label for="b2b-siren">Numéro SIREN (9 chiffres) ou SIRET (14 chiffres)</label>
+        <input type="text" id="b2b-siren" class="form-input" inputmode="numeric" placeholder="Ex : 552100554">
+        <div id="b2b-siren-status" style="font-size:0.76rem;margin-top:4px;color:#64748B;">
+          Optionnel — contrôle algorithmique Luhn instantané.
+        </div>
+      </div>
+
+      <div id="b2b-paypal-direct-wrap" hidden style="margin:14px 0;" class="no-print">
+        <a id="b2b-paypal-direct-link" href="#" target="_blank" rel="noopener" class="btn-primary" style="width:100%;">
+          Régler avec PayPal →
+        </a>
+      </div>
+
+      <pre id="b2b-quote-preview" class="quote-preview"></pre>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px;" class="no-print">
+        <button type="button" id="b2b-copy-btn" class="btn-outline" style="flex:1;">Copier ce Devis B2B</button>
+        <button type="button" id="b2b-print-btn" class="btn-outline" style="flex:1;">Imprimer / PDF</button>
+      </div>
+
+      <div style="margin-top:12px;" class="no-print">
+        <a id="b2b-stripe-instant-link" href="https://buy.stripe.com/4gMcN40sY41Zf5N1aV2cg06" class="btn-stripe" rel="noopener">
+          Accès immédiat CB / Apple Pay / Link (Facture Stripe auto) →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>

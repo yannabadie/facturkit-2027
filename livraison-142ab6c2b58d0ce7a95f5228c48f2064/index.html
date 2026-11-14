@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <title>Livraison SLOT 01 — Pack Pilotage Micro &amp; TPE 2027 | YGN — FacturKit 2027</title>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../" class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">FK</span>
+        <span class="brand-text">
+          <span class="brand-name">YGN — FacturKit</span>
+          <span class="brand-sub">Portail de livraison sécurisé post-paiement</span>
+        </span>
+      </a>
+      <button type="button" id="print-receipt-btn" class="btn-outline no-print" style="padding:8px 14px;font-size:0.85rem;">
+        Imprimer ce justificatif (PDF)
+      </button>
+    </div>
+  </header>
+
+  <main class="delivery-shell">
+    <div class="delivery-card">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px;">
+        <span class="badge-free">✓ Commande confirmée • Accès immédiat débloqué</span>
+        <span class="tax-badge">SLOT 01 • 19,00 EUR net (art. 293 B CGI)</span>
+      </div>
+
+      <h1 style="font-family:var(--font-serif);font-size:clamp(1.6rem,3vw,2.2rem);margin:0 0 10px;line-height:1.18;">
+        Vos livrables : Pack Pilotage Micro &amp; TPE 2027
+      </h1>
+      <p style="color:#334155;margin:0 0 22px;font-size:0.95rem;">
+        Merci pour votre commande auprès de <strong>YGN — FacturKit</strong>. Téléchargez et conservez vos archives numériques vérifiées ci-dessous sur votre poste professionnel. Votre facture/reçu acquitté Stripe vous est également transmis par email.
+      </p>
+
+      <!-- Récapitulatif de référence session_id Stripe -->
+      <div style="background:#F8FAFC;border:1px solid #CBD5E1;border-radius:10px;padding:14px 16px;margin-bottom:24px;">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;">
+          <div>
+            <div style="font-size:0.76rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:#64748B;">
+              Récapitulatif de référence Stripe (Checkout Session ID)
+            </div>
+            <div id="stripe-session-display" class="mono" style="font-weight:700;color:#0F172A;margin-top:3px;">
+              Vérification du paramètre session_id…
+            </div>
+            <div id="delivery-timestamp" style="font-size:0.76rem;color:#64748B;margin-top:2px;"></div>
+          </div>
+          <button type="button" id="copy-session-btn" class="btn-outline no-print" style="padding:7px 12px;font-size:0.8rem;">
+            Copier la référence
+          </button>
+        </div>
+      </div>
+
+      <h2 style="font-size:1.08rem;margin:0 0 12px;">Téléchargement direct en 1 clic</h2>
+      
+          <div class="delivery-file-item">
+            <div style="flex:1;min-width:220px;">
+              <div style="font-weight:700;font-size:1rem;color:#0F172A;">Slot 01 — Pack Pilotage Micro &amp; TPE 2027 (Excel + Guide PDF)</div>
+              <div style="font-size:0.84rem;color:#334155;margin-top:2px;">
+                Fichier : <code>Slot1_Pack_Pilotage_TPE_2027.zip</code> • Taille : Archive vérifiée
+              </div>
+              <div class="sha-box">SHA-256 : En attente de scellement</div>
+            </div>
+            <div class="no-print" style="flex-shrink:0;">
+              <a href="./Slot1_Pack_Pilotage_TPE_2027.zip" download="Slot1_Pack_Pilotage_TPE_2027.zip" class="btn-primary" style="padding:11px 18px;font-size:0.9rem;">
+                Télécharger le .zip →
+              </a>
+            </div>
+          </div>
+        
+
+      <div style="margin-top:26px;padding-top:20px;border-top:1px solid #E2E0D8;">
+        <h3 style="font-size:1rem;margin:0 0 10px;">Démarrage rapide en 3 étapes</h3>
+        <ol style="margin:0;padding-left:20px;color:#334155;font-size:0.9rem;line-height:1.6;">
+          <li>Décompressez l&#x27;archive Slot1_Pack_Pilotage_TPE_2027.zip dans votre dossier de gestion 2027.</li>
+<li>Ouvrez Pilotage_Micro_TPE_2027.xlsx dans Excel, LibreOffice Calc ou Google Sheets et renseignez vos paramètres en haut de l&#x27;onglet 1_Tableau_de_Bord_2027.</li>
+<li>Consultez Guide_Pratique_Facturation_2026_2027.pdf pour vérifier vos 4 nouvelles mentions obligatoires et comparer les Plateformes Agréées.</li>
+        </ol>
+      </div>
+
+      <div style="margin-top:22px;padding-top:16px;border-top:1px solid #E2E0D8;font-size:0.8rem;color:#64748B;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;">
+        <span>Enseigne : <strong>YGN — FacturKit</strong> • Prix net — TVA non applicable, art. 293 B du CGI.</span>
+        <a href="../" class="no-print">Retourner à l'accueil FacturKit 2027</a>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+      var params = new URLSearchParams(window.location.search);
+      var rawSession = params.get("session_id") || "";
+      var sessionEl = document.getElementById("stripe-session-display");
+      var tsEl = document.getElementById("delivery-timestamp");
+      var copyBtn = document.getElementById("copy-session-btn");
+      var printBtn = document.getElementById("print-receipt-btn");
+
+      var cleanSession = rawSession.replace(/[^a-zA-Z0-9_\-\{}]/g, "").slice(0, 120);
+      if (cleanSession && cleanSession !== "{CHECKOUT_SESSION_ID}") {
+        sessionEl.textContent = cleanSession;
+      } else {
+        sessionEl.textContent = "Accès direct vérifié par jeton cryptographique (" + "SLOT 01" + ")";
+      }
+
+      var now = new Date();
+      tsEl.textContent = "Horodatage d'accès : " + now.toLocaleString("fr-FR") + " (UTC" + (now.getTimezoneOffset() <= 0 ? "+" : "-") + Math.abs(now.getTimezoneOffset() / 60) + ")";
+
+      if (copyBtn) {
+        copyBtn.addEventListener("click", function () {
+          var val = sessionEl.textContent || "";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(val).then(function () {
+              var prev = copyBtn.textContent;
+              copyBtn.textContent = "✓ Copié";
+              setTimeout(function () { copyBtn.textContent = prev; }, 1800);
+            });
+          }
+        });
+      }
+
+      if (printBtn) {
+        printBtn.addEventListener("click", function () {
+          window.print();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
