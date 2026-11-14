@@ -6,7 +6,7 @@
 
 // 1-VARIABLE PAYPAL : Renseignez ici votre URL PayPal.me ou lien PayPal NCP
 // (ex: "https://paypal.me/VotreIdentifiant") pour activer le bouton PayPal direct.
-// Si laissé vide (""), le bouton secondaire "PayPal / Devis B2B" ouvre le module
+// Si laissé vide (""), le bouton secondaire "Devis B2B / Autre règlement" ouvre le module
 // instantané d'édition de Devis B2B / Bon de commande avec contrôle SIREN.
 const PAYPAL_CHECKOUT_URL = "";
 
@@ -15,6 +15,14 @@ window.FACTURKIT_CONFIG = {
   productSuite: "FacturKit 2027",
   publicSiteUrl: "https://yannabadie.github.io/facturkit-2027/",
   taxNotice: "Prix nets — TVA non applicable, art. 293 B du CGI",
+  activePaymentMethods: [
+    "Carte Bancaire (CB / Visa / Mastercard)",
+    "Apple Pay",
+    "Amazon Pay",
+    "Klarna",
+    "Link",
+    "Bancontact"
+  ],
   paypalCheckoutUrl: PAYPAL_CHECKOUT_URL,
   paypalSlotLinks: {
     slot1: PAYPAL_CHECKOUT_URL ? `${PAYPAL_CHECKOUT_URL.replace(/\/$/, "")}/19EUR` : "",

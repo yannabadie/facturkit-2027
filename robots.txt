@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /livraison-
 Disallow: /livraison-*
+
+Sitemap: https://yannabadie.github.io/facturkit-2027/sitemap.xml

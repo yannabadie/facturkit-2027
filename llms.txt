@@ -1,0 +1,26 @@
+# FacturKit 2027 (YGN — FacturKit)
+
+> Suite française d'outillage opérationnel sans abonnement pour la facturation électronique Factur-X (norme européenne EN 16931 / UN-CEFACT CrossIndustryInvoice), le pilotage financier micro-entreprise & TPE 2027, l'automatisation n8n et la conformité EU AI Act.
+
+FacturKit 2027 s'adresse aux micro-entrepreneurs (BNC/BIC), freelances, artisans, professions libérales, cabinets et dirigeants de TPE établis en France faisant face à l'obligation de réception des factures électroniques (en vigueur depuis le 1er septembre 2026) et à l'obligation d'émission structurée + e-reporting (échéance du 1er septembre 2027).
+
+Tous les outils sont fournis en **paiement unique (0 EUR/mois d'abonnement)**, exécutables localement hors-ligne pour une confidentialité RGPD totale. Enseigne : **YGN — FacturKit** (`Prix nets — TVA non applicable, art. 293 B du CGI`). Encaissement sécurisé Stripe Live acceptant nativement **Carte Bancaire, Apple Pay, Amazon Pay, Klarna, Link et Bancontact**, avec facture B2B acquittée automatique et livraison HTTPS immédiate.
+
+## Outils Gratuits en Accès Libre (Sans inscription)
+
+- [Audit Éclair Conformité Facture 2026–2027 (en ligne, 100% navigateur)](https://yannabadie.github.io/facturkit-2027/audit-facture-gratuit.html): Contrôle en 30 secondes les 10 critères de conformité d'une facture française 2026–2027 (SIREN client B2B par algorithme de Luhn, nature de l'opération Biens/Services/Mixte, adresse de livraison, option TVA ou franchise art. 293 B CGI, indemnité forfaitaire de 40 EUR) et attribue un score sur 100.
+- [Extrait PDF Gratuit — Pack Pilotage Micro & TPE 2027 (2 pages)](https://yannabadie.github.io/facturkit-2027/assets/Apercu_Gratuit_Slot1.pdf): Démonstration téléchargeable du guide pratique et du tableau de bord Excel.
+- [Validateur Open-Source Python CLI Factur-X France 2027 (MIT)](https://github.com/yannabadie/facturx-france-2027): Utilitaire CLI Python zéro-dépendance et GitHub Action pour valider les fichiers XML/PDF Factur-X CII EN 16931.
+
+## Offres Commerciales à Téléchargement Immédiat (Paiement Unique)
+
+- [Vitrine Officielle FacturKit 2027](https://yannabadie.github.io/facturkit-2027/): Présentation complète des 3 offres, tableau comparatif et Conditions Générales de Vente B2B & Numérique (art. L221-28 Code de la consommation).
+- **Slot 01 — Pack Pilotage Micro & TPE 2027 (19,00 EUR net)** — [Commander sur Stripe](https://buy.stripe.com/3cIaEWfnS8ifbTBdXH2cg05): Classeur `Pilotage_Micro_TPE_2027.xlsx` à 5 onglets et 1 793 formules Excel dynamiques (Tableau de bord CA/URSSAF/Revenu net & seuils franchise TVA art. 293 B, Livre des recettes normé 2026–2027, Registre des achats Factur-X, Comparateur des Plateformes Agréées, Simulateur TJM/marge) + `Guide_Pratique_Facturation_2026_2027.pdf` (10 pages).
+- **Slot 02 — Studio Factur-X Local 2027 (49,00 EUR net — Populaire)** — [Commander sur Stripe](https://buy.stripe.com/4gMcN40sY41Zf5N1aV2cg06): Application web monopage 100% hors-ligne `Studio_FacturX_2027.html` générant de vraies factures hybrides PDF/A-3 embarquant le fichier XML `factur-x.xml` conforme EN 16931 (validation Luhn SIREN/SIRET, carnet clients/catalogue local, Inspecteur/Vérificateur Factur-X fournisseur par glisser-déposer) + `facturx_cli.py` pour traitement par lots JSON/CSV + `GUIDE_UTILISATEUR.pdf`.
+- **Slot 03 — Suite Opérations & Automatisation TPE 2027 — Édition Pro Tout-en-un (119,00 EUR net)** — [Commander sur Stripe](https://buy.stripe.com/aFa8wO0sY1TRbTB1aV2cg07): Inclut intégralement le Slot 01 + le Slot 02 + 3 workflows n8n v1+ prêts à importer (tri automatique des factures fournisseurs Factur-X vers Sheets/Drive, relances graduées d'impayés B2B J+3/J+10/J+21 art. L441-10 Code de commerce, météo hebdomadaire trésorerie & seuils) + fiches Make.com + Kit Conformité EU AI Act & RGPD PME (`Registre_Systemes_IA_PME_2027.xlsx` + Charte IA interne PDF).
+
+## Guides Piliers Réglementaires & Techniques (France 2026–2027)
+
+- [Les 4 Nouvelles Mentions Obligatoires sur Facture en 2026–2027 (Guide Complet TPE & Micro)](https://yannabadie.github.io/facturkit-2027/guides/mentions-obligatoires-facture-2026-2027.html): Détail juridique et pratique du SIREN acheteur, de la nature de l'opération, de l'adresse de livraison, de l'option TVA sur les débits, des sanctions fiscales (15 EUR/mention) et modèles conformes.
+- [Comment Générer une Facture Factur-X (PDF + XML EN 16931) Sans Abonnement Mensuel](https://yannabadie.github.io/facturkit-2027/guides/generer-factur-x-sans-abonnement-micro-entreprise.html): Architecture technique d'un PDF/A-3 hybride Factur-X, différence entre outil d'édition local et Plateforme Agréée de transmission, et méthode zéro-abonnement pour indépendants.
+- [Comparatif Objectif des Plateformes Agréées (ex-PDP) 2026–2027 pour Micro-Entreprises & TPE](https://yannabadie.github.io/facturkit-2027/guides/comparatif-plateformes-agreees-pa-pdp-2027.html): Analyse factuelle par profil (Micro BNC, Micro BIC, Artisan, Société TPE) de Indy, Tiime, Abby, Pennylane, Qonto, Shine et Chorus Pro.
