@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erreurs de totaux EN 16931 (BR-CO-10 à BR-CO-17) : comprendre et corriger | FacturKit</title>
+  <meta name="description" content="Les règles de cohérence des montants de la norme EN 16931 expliquées simplement, avec les formules et les causes d&#x27;erreur les plus fréquentes dans les factures Factur-X.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yannabadie.github.io/facturkit-2027/guides/erreurs-calcul-totaux-en16931-br-co.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Erreurs de totaux EN 16931 (BR-CO-10 à BR-CO-17) : comprendre et corriger">
+  <meta property="og:description" content="Les règles de cohérence des montants de la norme EN 16931 expliquées simplement, avec les formules et les causes d&#x27;erreur les plus fréquentes dans les factures Factur-X.">
+  <meta property="og:url" content="https://yannabadie.github.io/facturkit-2027/guides/erreurs-calcul-totaux-en16931-br-co.html">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Erreurs de totaux EN 16931 : les règles BR-CO expliquées", "description": "Les règles de cohérence des montants de la norme EN 16931 expliquées simplement, avec les formules et les causes d'erreur les plus fréquentes dans les factures Factur-X.", "inLanguage": "fr-FR", "dateModified": "2026-11-17", "author": {"@type": "Organization", "name": "YGN — FacturKit"}, "publisher": {"@type": "Organization", "name": "YGN — FacturKit", "url": "https://yannabadie.github.io/facturkit-2027/"}, "mainEntityOfPage": "https://yannabadie.github.io/facturkit-2027/guides/erreurs-calcul-totaux-en16931-br-co.html"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "FacturKit 2027", "item": "https://yannabadie.github.io/facturkit-2027/"}, {"@type": "ListItem", "position": 2, "name": "Erreurs de totaux EN 16931 : les règles BR-CO expliquées", "item": "https://yannabadie.github.io/facturkit-2027/guides/erreurs-calcul-totaux-en16931-br-co.html"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Faut-il arrondir la TVA par ligne ou par taux ?", "acceptedAnswer": {"@type": "Answer", "text": "La norme calcule la TVA par catégorie (taux) à partir de la base imposable totale de cette catégorie ; arrondir ligne par ligne crée souvent des écarts d'un centime."}}, {"@type": "Question", "name": "Un écart d'un centime est-il vraiment bloquant ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui pour un contrôle automatique EN 16931 : les règles BR-CO sont strictes."}}]}]}</script>
+</head>
+<body>
+
+  <div class="reg-banner">
+    <div class="container reg-banner-inner">
+      <span class="reg-pill"><span class="reg-dot"></span> Réforme facturation électronique • Sept. 2026 / Sept. 2027</span>
+      <a class="reg-banner-link" href="../audit-facture-gratuit.html">Tester une facture gratuitement →</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../" class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">FK</span>
+        <span class="brand-text">
+          <span class="brand-name">YGN — FacturKit</span>
+          <span class="brand-sub">Guides Techniques Factur-X</span>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <a class="nav-link" href="../">Accueil Boutique</a>
+        <a class="nav-link" href="../audit-facture-gratuit.html">Audit Gratuit</a>
+        <a class="btn-header" href="../#slot-2">Découvrir Studio Factur-X (49 €)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-shell">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="../">FacturKit 2027</a> <span>/</span> <span>Erreurs de totaux EN 16931 : les règles BR-CO expliquées</span>
+    </nav>
+
+    <article class="article-prose">
+      <h1>Erreurs de totaux EN 16931 : les règles BR-CO expliquées</h1>
+      <div class="article-meta">
+        Mis à jour le 17 novembre 2026 • Contenu rédigé avec assistance IA et vérifié • Informations générales, ne constituant pas un conseil juridique ou fiscal
+      </div>
+
+      <p>Les règles de cohérence des montants de la norme EN 16931 expliquées simplement, avec les formules et les causes d&#x27;erreur les plus fréquentes dans les factures Factur-X.</p>
+
+      <h2>Pourquoi une facture « juste au centime » peut être rejetée</h2>
+      <p>La norme EN 16931 impose des règles de cohérence (BR-CO) entre les montants. Un écart d'un centime dû à un arrondi fait rejeter la facture, même si le PDF semble correct.</p>
+      <h2>Les formules à respecter</h2>
+      <ul><li><strong>BR-CO-10</strong> : somme des montants nets des lignes = total des lignes.</li><li><strong>BR-CO-13</strong> : total HT = total des lignes − remises globales + frais globaux.</li><li><strong>BR-CO-14</strong> : total TVA = somme des montants de TVA par catégorie.</li><li><strong>BR-CO-15</strong> : total TTC = total HT + total TVA.</li><li><strong>BR-CO-16</strong> : montant à payer = total TTC − acomptes versés + arrondi.</li><li><strong>BR-CO-17</strong> : TVA d'une catégorie = base imposable × taux / 100, arrondie à 2 décimales.</li></ul>
+      <h2>Causes fréquentes</h2>
+      <ol><li>Arrondi de la TVA ligne par ligne au lieu d'un arrondi par catégorie.</li><li>Remise appliquée dans le PDF mais absente du XML.</li><li>Acompte déduit du total TTC au lieu du montant à payer.</li><li>Montants avec plus de 2 décimales.</li></ol><p>Le <a href="../audit-facture-gratuit.html">validateur gratuit</a> recalcule chaque total, indique la règle violée et l'écart exact.</p>
+
+      <h2>Questions fréquentes</h2>
+      <div class="faq-list">
+        <details><summary>Faut-il arrondir la TVA par ligne ou par taux ?</summary><p>La norme calcule la TVA par catégorie (taux) à partir de la base imposable totale de cette catégorie ; arrondir ligne par ligne crée souvent des écarts d&#x27;un centime.</p></details>
+        <details><summary>Un écart d&#x27;un centime est-il vraiment bloquant ?</summary><p>Oui pour un contrôle automatique EN 16931 : les règles BR-CO sont strictes.</p></details>
+      </div>
+
+      <div class="article-cta-panel">
+        <h2>Vérifiez puis produisez vos factures conformes (paiement unique • 0 €/mois)</h2>
+        <p>Commencez par l'audit gratuit dans votre navigateur. Pour produire en routine des factures Factur-X conformes, les outils FacturKit fonctionnent hors-ligne. Ils ne remplacent pas une Plateforme Agréée : ils vous aident à préparer des fichiers conformes.</p>
+        <div class="article-cta-buttons">
+          <a class="btn-cta-slot" href="../audit-facture-gratuit.html">
+            <span>Tester gratuitement</span>
+            <small style="font-weight:500;opacity:0.8;">Audit Éclair Facture (30 s)</small>
+          </a>
+          <a class="btn-cta-slot featured" href="https://buy.stripe.com/4gMcN40sY41Zf5N1aV2cg06">
+            <span>Studio Factur-X Local — 49 € net</span>
+            <small style="font-weight:600;">Générateur PDF/A-3 + XML hors-ligne</small>
+          </a>
+          <a class="btn-cta-slot" href="https://buy.stripe.com/3cIaEWfnS8ifbTBdXH2cg05">
+            <span>Pack Pilotage — 19 € net</span>
+            <small style="font-weight:500;opacity:0.8;">Tableau de bord Excel + guide</small>
+          </a>
+        </div>
+      </div>
+
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="./mentions-obligatoires-facture-2026-2027.html">Les 4 nouvelles mentions obligatoires sur facture en 2026–2027</a></li>
+        <li><a href="./generer-factur-x-sans-abonnement-micro-entreprise.html">Générer une facture Factur-X sans abonnement mensuel</a></li>
+        <li><a href="./comparatif-plateformes-agreees-pa-pdp-2027.html">Comparatif des Plateformes Agréées (PA / ex-PDP) 2027</a></li>
+        <li><a href="./facture-electronique-micro-entreprise-2027.html">Facture électronique en micro-entreprise : le guide 2026-2027</a></li>
+        <li><a href="./franchise-tva-293b-factur-x.html">Franchise en base de TVA (293 B) : réussir sa facture Factur-X</a></li>
+        <li><a href="./checklist-reforme-facturation-electronique-tpe.html">Réforme de la facturation électronique : la checklist TPE en 10 points</a></li>
+        <li><a href="https://github.com/yannabadie/facturx-france-2027" rel="noopener">Validateur Factur-X open source en Python (CLI + GitHub Action)</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top:0;border:none;">
+      <span>© 2026–2027 YGN — FacturKit • Prix nets — TVA non applicable, art. 293 B du CGI.</span>
+      <a href="../" style="color:#FFFFFF;">Retourner à la boutique FacturKit 2027 →</a>
+    </div>
+  </footer>
+
+</body>
+</html>
