@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lire et vérifier une facture Factur-X reçue en 2026 (PDF/A-3 &amp; XML) | FacturKit</title>
+  <meta name="description" content="Depuis le 1er septembre 2026, toutes les entreprises françaises reçoivent des factures Factur-X. Voici comment ouvrir un PDF/A-3, inspecter le XML EN 16931 en local et contrôler la conformité fournisseur.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yannabadie.github.io/facturkit-2027/guides/lire-verifier-facture-factur-x-recue-2026.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Lire et vérifier une facture Factur-X reçue en 2026 (PDF/A-3 &amp; XML)">
+  <meta property="og:description" content="Méthode pratique et 100 % locale pour inspecter une facture fournisseur Factur-X reçue depuis septembre 2026 : pièce jointe factur-x.xml, contrôles SIREN Luhn, totaux BR-CO et archivage probant.">
+  <meta property="og:url" content="https://yannabadie.github.io/facturkit-2027/guides/lire-verifier-facture-factur-x-recue-2026.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Lire et vérifier une facture Factur-X reçue en 2026 (PDF/A-3 &amp; XML)">
+  <meta name="twitter:description" content="Comment extraire factur-x.xml sans téléverser vos PDF fournisseurs sur un serveur tiers et vérifier la conformité EN 16931 en 30 secondes.">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "TechArticle", "headline": "Comment ouvrir, lire et vérifier une facture Factur-X reçue d'un fournisseur (2026–2027)", "description": "Guide opérationnel pour inspecter en local une facture hybride PDF/A-3 Factur-X reçue depuis le 1er septembre 2026 : extraction du XML EN 16931, vérifications SIREN/BR-CO et archivage.", "inLanguage": "fr-FR", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "author": {"@type": "Organization", "name": "YGN — FacturKit"}, "publisher": {"@type": "Organization", "name": "YGN — FacturKit", "url": "https://yannabadie.github.io/facturkit-2027/"}, "mainEntityOfPage": "https://yannabadie.github.io/facturkit-2027/guides/lire-verifier-facture-factur-x-recue-2026.html"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "FacturKit 2027", "item": "https://yannabadie.github.io/facturkit-2027/"}, {"@type": "ListItem", "position": 2, "name": "Lire et vérifier une facture Factur-X reçue en 2026", "item": "https://yannabadie.github.io/facturkit-2027/guides/lire-verifier-facture-factur-x-recue-2026.html"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quelle est la différence entre un PDF classique et une facture Factur-X reçue ?", "acceptedAnswer": {"@type": "Answer", "text": "Un fichier Factur-X ressemble à un PDF ordinaire à l'écran, mais il respecte le profil PDF/A-3 et embarque en pièce jointe interne un fichier structuré factur-x.xml conforme à la norme européenne EN 16931 (UN/CEFACT CII)."}}, {"@type": "Question", "name": "Puis-je vérifier une facture fournisseur sans envoyer le PDF sur Internet ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. L'inspecteur binaire gratuit FacturKit extrait localement le flux FlateDecode du PDF/A-3 directement dans votre navigateur (0 octets transmis à un serveur) et contrôle les règles EN 16931 et SIREN Luhn."}}, {"@type": "Question", "name": "Faut-il conserver le PDF/A-3 original après réception ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui : ne réimprimez pas le fichier en PDF simple, ce qui détruirait la pièce jointe XML intégrée. Archivez le fichier d'origine intact reçu via votre Plateforme Agréée."}}]}]}</script>
+</head>
+<body>
+
+  <div class="reg-banner">
+    <div class="container reg-banner-inner">
+      <span class="reg-pill"><span class="reg-dot"></span> Réception obligatoire en vigueur depuis le 1er sept. 2026</span>
+      <a class="reg-banner-link" href="../audit-facture-gratuit.html">Inspecter un PDF Factur-X gratuitement →</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../" class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">FK</span>
+        <span class="brand-text">
+          <span class="brand-name">YGN — FacturKit</span>
+          <span class="brand-sub">Guides Techniques Factur-X</span>
+        </span>
+      </a>
+      <nav class="header-nav">
+        <a class="nav-link" href="../">Accueil Boutique</a>
+        <a class="nav-link" href="../audit-facture-gratuit.html">Audit Gratuit</a>
+        <a class="btn-header" href="../#slot-2">Découvrir Studio Factur-X (49 €)</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="article-shell">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="../">FacturKit 2027</a> <span>/</span> <span>Lire et vérifier une facture Factur-X reçue en 2026</span>
+    </nav>
+
+    <article class="article-prose">
+      <h1>Comment ouvrir, lire et vérifier une facture Factur-X reçue d'un fournisseur (2026–2027)</h1>
+      <div class="article-meta">
+        Publié le 20 novembre 2026 • Guide pratique TPE &amp; indépendants • Informations générales, ne constituant pas un conseil juridique ou fiscal
+      </div>
+
+      <p>Depuis le <strong>1er septembre 2026</strong>, toutes les entreprises établies en France — y compris les micro-entreprises et TPE — sont soumises à l'obligation de <strong>réception</strong> des factures électroniques. Si vos grands fournisseurs (télécoms, énergie, SaaS, grossistes) vous transmettent déjà des factures <strong>Factur-X</strong>, voici comment vérifier concrètement ce que contient le fichier avant de le régler et de l'archiver.</p>
+
+      <h2>1. Ce qui se cache dans un PDF Factur-X reçu</h2>
+      <p>Visuellement, une facture Factur-X s'ouvre dans n'importe quel lecteur PDF (Aperçu macOS, Edge, Chrome, Adobe Reader). Sa particularité technique réside dans le conteneur <strong>PDF/A-3</strong> qui embarque une pièce jointe interne nommée <code>factur-x.xml</code> (ou <code>zugferd-invoice.xml</code> / <code>xrechnung.xml</code> pour certains fournisseurs européens).</p>
+      <p>En cas de divergence entre le texte affiché sur le PDF et les données structurées du XML, ce sont les <strong>données structurées</strong> qui font foi dans le circuit de facturation électronique : il est donc essentiel de ne pas se limiter au seul visuel PDF.</p>
+
+      <h2>2. Inspecter le XML en local (sans fuite de données fournisseurs)</h2>
+      <p>Envoyer des factures fournisseurs contenant vos prix d'achat, IBAN et SIREN sur des validateurs web distants expose des données commerciales sensibles. Deux méthodes 100 % locales permettent un contrôle immédiat :</p>
+      <ol>
+        <li><strong>Dans votre navigateur (0 installation)</strong> : glissez-déposez votre fichier PDF/A-3 ou XML dans l'<a href="../audit-facture-gratuit.html">Inspecteur Factur-X gratuit FacturKit</a>. Le moteur extrait le flux binaire <code>FlateDecode</code> localement sur votre poste, vérifie la clé Luhn des SIREN, les totaux <a href="./erreurs-calcul-totaux-en16931-br-co.html">EN 16931 BR-CO</a> et les règles françaises XP Z12-012.</li>
+        <li><strong>En ligne de commande (batch / CI)</strong> : utilisez notre <a href="https://github.com/yannabadie/facturx-france-2027" rel="noopener">validateur Python CLI open source</a> pour contrôler un dossier entier de factures fournisseurs avant import comptable.</li>
+      </ol>
+
+      <h2>3. Les 5 contrôles indispensables avant mise en paiement</h2>
+      <ul>
+        <li><strong>Présence réelle de <code>factur-x.xml</code></strong> : certains fournisseurs renomment un PDF simple en « Factur-X » sans pièce jointe XML valide.</li>
+        <li><strong>Concordance HT / TVA / TTC</strong> : vérifiez que le net à payer (<code>DuePayableAmount</code>) dans le XML correspond exactement au montant indiqué sur le PDF visuel.</li>
+        <li><strong>Identifiants SIREN &amp; TVA</strong> : contrôlez le SIREN vendeur et votre propre SIREN acheteur (<a href="./mentions-obligatoires-facture-2026-2027.html">guide des 4 nouvelles mentions 2026–2027</a>).</li>
+        <li><strong>Code TVA ou exonération</strong> : vérifiez le taux appliqué ou la mention <a href="./franchise-tva-293b-factur-x.html">franchise en base art. 293 B du CGI</a> si le fournisseur est non assujetti.</li>
+        <li><strong>Archivage intact</strong> : conservez le fichier PDF/A-3 original reçu depuis votre <a href="./comparatif-plateformes-agreees-pa-pdp-2027.html">Plateforme Agréée</a> sans jamais le « réimprimer en PDF », ce qui détruirait la couche XML.</li>
+      </ul>
+
+      <h2>Questions fréquentes</h2>
+      <div class="faq-list">
+        <details><summary>Quelle est la différence entre un PDF classique et une facture Factur-X reçue ?</summary><p>Un fichier Factur-X respecte la norme PDF/A-3 et embarque en pièce jointe interne un fichier structuré <code>factur-x.xml</code> conforme à la norme européenne EN 16931 (UN/CEFACT CII).</p></details>
+        <details><summary>Puis-je vérifier une facture fournisseur sans envoyer le PDF sur Internet ?</summary><p>Oui. L'inspecteur binaire gratuit FacturKit décompresse le PDF/A-3 localement en JavaScript dans votre navigateur : aucun fichier ne quitte votre ordinateur.</p></details>
+        <details><summary>Faut-il conserver le PDF/A-3 original après réception ?</summary><p>Oui : archivez toujours le fichier original intact transmis par votre Plateforme Agréée afin de préserver la pièce jointe XML structurée.</p></details>
+      </div>
+
+      <div class="article-cta-panel">
+        <h2>Inspectez vos factures reçues et préparez votre émission 2027 (0 €/mois)</h2>
+        <p>Testez gratuitement vos PDF/A-3 reçus dans le navigateur, puis passez à l'émission autonome conforme EN 16931 sans abonnement mensuel.</p>
+        <div class="article-cta-buttons">
+          <a class="btn-cta-slot" href="../audit-facture-gratuit.html">
+            <span>Inspecter un PDF / XML</span>
+            <small style="font-weight:500;opacity:0.8;">100 % local et gratuit</small>
+          </a>
+          <a class="btn-cta-slot featured" href="https://buy.stripe.com/4gMcN40sY41Zf5N1aV2cg06">
+            <span>Studio Factur-X Local — 49 € net</span>
+            <small style="font-weight:600;">Générateur + Inspecteur PDF/A-3 hors-ligne</small>
+          </a>
+          <a class="btn-cta-slot" href="https://buy.stripe.com/3cIaEWfnS8ifbTBdXH2cg05">
+            <span>Pack Pilotage — 19 € net</span>
+            <small style="font-weight:500;opacity:0.8;">Registre achats Factur-X Excel + guide</small>
+          </a>
+        </div>
+      </div>
+
+      <h2>Pour aller plus loin</h2>
+      <ul>
+        <li><a href="./mentions-obligatoires-facture-2026-2027.html">Les 4 nouvelles mentions obligatoires sur facture en 2026–2027</a></li>
+        <li><a href="./generer-factur-x-sans-abonnement-micro-entreprise.html">Générer une facture Factur-X sans abonnement mensuel</a></li>
+        <li><a href="./comparatif-plateformes-agreees-pa-pdp-2027.html">Comparatif des Plateformes Agréées (PA / ex-PDP) 2027</a></li>
+        <li><a href="./facture-electronique-micro-entreprise-2027.html">Facture électronique en micro-entreprise : le guide 2026-2027</a></li>
+        <li><a href="./franchise-tva-293b-factur-x.html">Franchise en base de TVA (293 B) : réussir sa facture Factur-X</a></li>
+        <li><a href="./erreurs-calcul-totaux-en16931-br-co.html">Erreurs de totaux EN 16931 : les règles BR-CO expliquées</a></li>
+        <li><a href="./checklist-reforme-facturation-electronique-tpe.html">Réforme de la facturation électronique : la checklist TPE en 10 points</a></li>
+      </ul>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong style="color:#fff;">YGN — FacturKit 2027</strong>
+          <p class="footer-meta">Outils locaux sans abonnement pour la facturation électronique EN 16931 et le pilotage micro-entreprise &amp; TPE. Prix nets — TVA non applicable, art. 293 B du CGI.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../">Accueil Boutique</a>
+          <a href="../audit-facture-gratuit.html">Audit Gratuit</a>
+          <a href="../#cgv-completes">CGV &amp; Mentions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
