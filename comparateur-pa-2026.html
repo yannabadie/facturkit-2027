@@ -541,7 +541,8 @@
         <a class="nav-link" href="./">Accueil</a>
         <a class="nav-link" href="./audit-facture-gratuit.html?mode=fx">Inspecteur Gratuit</a>
         <a class="nav-link" href="./comparateur-pa-2026.html" aria-current="page" style="color:var(--accent-blue);font-weight:700;">Comparateur PA</a>
-        <a class="nav-link" href="./index.html#guides-2027">Guides 2027</a>
+        <a class="nav-link" href="./simulateur-statut-urssaf-2026.html">Simulateur URSSAF</a>
+        <a class="nav-link" href="./metiers/index.html">50 Métiers (NAF)</a>
         <a class="btn-header" href="./index.html#distributeur-b2b">Voir les 3 Slots</a>
       </nav>
     </div>
@@ -904,6 +905,8 @@
           <h4>Outils &amp; Guides gratuits</h4>
           <ul class="footer-links">
             <li><a href="./comparateur-pa-2026.html">Comparateur Plateformes Agréées (159 PA, 2026–2027)</a></li>
+            <li><a href="./simulateur-statut-urssaf-2026.html">Simulateur URSSAF, TVA 293 B &amp; Statut 2026 (API officielle)</a></li>
+            <li><a href="./metiers/index.html">Annuaire Factur-X par Métier &amp; Code NAF (50 fiches)</a></li>
             <li><a href="./audit-facture-gratuit.html?mode=fx">Inspecteur PDF/A-3 &amp; Audit Facture Gratuit</a></li>
             <li><a href="./guides/comparatif-plateformes-agreees-pa-pdp-2027.html">Guide : Bien choisir sa Plateforme Agréée (PA)</a></li>
             <li><a href="./guides/lire-verifier-facture-factur-x-recue-2026.html">Guide : Lire et vérifier une facture Factur-X reçue</a></li>
@@ -929,27 +932,33 @@
     </div>
   </footer>
 
+  <script src="./pa-affiliates.js"></script>
   <script>
   (function () {
     "use strict";
 
-    // Emplacements réservés pour les liens partenaires approuvés (Affilae / Axonaut).
-    // Laisser vide tant qu'un programme n'est pas validé : les liens officiels natifs restent utilisés.
-    var PA_AFFILIATE_MAP = {
+    // Source unique centralisée dans ./pa-affiliates.js (partagée avec le Simulateur URSSAF et les 50 fiches métiers).
+    var PA_AFFILIATE_MAP = Object.assign({
       "affilae-tiime": "",
       "affilae-indy": "",
       "affilae-pennylane": "",
       "affilae-qonto": "",
+      "affilae-shine": "",
+      "affilae-abby": "",
       "direct-axonaut": "",
       "direct-sellsy": ""
-    };
+    }, window.PA_AFFILIATE_MAP || {});
 
-    var links = document.querySelectorAll("a[data-affiliate-slot]");
-    for (var i = 0; i < links.length; i++) {
-      var slot = links[i].getAttribute("data-affiliate-slot");
-      if (slot && PA_AFFILIATE_MAP[slot]) {
-        links[i].setAttribute("href", PA_AFFILIATE_MAP[slot]);
-        links[i].setAttribute("rel", "noopener noreferrer sponsored");
+    if (typeof window.applyFacturKitAffiliates === "function") {
+      window.applyFacturKitAffiliates(document);
+    } else {
+      var links = document.querySelectorAll("a[data-affiliate-slot]");
+      for (var i = 0; i < links.length; i++) {
+        var slot = links[i].getAttribute("data-affiliate-slot");
+        if (slot && PA_AFFILIATE_MAP[slot]) {
+          links[i].setAttribute("href", PA_AFFILIATE_MAP[slot]);
+          links[i].setAttribute("rel", "noopener noreferrer sponsored");
+        }
       }
     }
 

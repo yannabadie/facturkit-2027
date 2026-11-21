@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulateur Statut Juridique, URSSAF &amp; TVA 2026 (Micro vs EI vs EURL vs SASU) | FacturKit</title>
+  <meta name="description" content="Simulateur gratuit 2026 connecté à l'API officielle URSSAF mon-entreprise.fr : comparez Micro-entreprise, EI Réel, EURL et SASU, vérifiez vos seuils de franchise TVA (art. 293 B) et votre statut Factur-X 2026–2027.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yannabadie.github.io/facturkit-2027/simulateur-statut-urssaf-2026.html">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Simulateur URSSAF, TVA &amp; Statut Juridique 2026 — Micro vs EI vs EURL vs SASU">
+  <meta property="og:description" content="Calculez votre revenu net après cotisations URSSAF 2026 et impôt sur 4 statuts juridiques, contrôlez votre seuil TVA art. 293 B et trouvez votre Plateforme Agréée Factur-X.">
+  <meta property="og:url" content="https://yannabadie.github.io/facturkit-2027/simulateur-statut-urssaf-2026.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Simulateur Statut Juridique, URSSAF & TVA 2026 — FacturKit",
+        "url": "https://yannabadie.github.io/facturkit-2027/simulateur-statut-urssaf-2026.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "inLanguage": "fr-FR",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "FacturKit 2027",
+            "item": "https://yannabadie.github.io/facturkit-2027/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Simulateur URSSAF, TVA & Statut 2026",
+            "item": "https://yannabadie.github.io/facturkit-2027/simulateur-statut-urssaf-2026.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Quels sont les taux de cotisations URSSAF micro-entreprise en 2026 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "En 2026, les cotisations URSSAF micro-entrepreneur s'élèvent à environ 25,8 % pour les prestations de services libérales BNC (régime général SSI, après les hausses progressives 2024–2026), 21,2 % pour les prestations commerciales/artisanales BIC, et 12,3 % pour l'achat-revente de marchandises (hors CFP)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "À partir de quel chiffre d'affaires l'EI Réel ou l'EURL devient-il plus rentable que la Micro-entreprise ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Dès que vos charges professionnelles réelles (loyer, matériel, sous-traitance, logiciels, déplacements) dépassent l'abattement forfaitaire micro (34 % en BNC, 50 % en BIC services) ou lorsque vous dépassez le plafond micro (77 700 € services / 188 700 € vente), l'EI au réel ou l'EURL à l'IS optimise nettement votre revenu net."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Le changement de statut juridique change-t-il mes obligations Factur-X 2026–2027 ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Non : micro-entreprise, EI, EURL et SASU sont tous tenus de disposer d'une Plateforme Agréée (PA) de réception depuis le 1er septembre 2026, et d'émettre leurs factures B2B en Factur-X 1.09.2 au 1er septembre 2027."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    :root { --border: var(--border-light, #E2E0D8); --muted: var(--ink-muted, #64748B); --accent: var(--accent-blue, #1D4ED8); --text: var(--ink-primary, #0F172A); }
+    .sim-hero { padding: 48px 0 34px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
+    .sim-panel { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 24px; box-shadow: 0 4px 16px rgba(15,23,42,0.04); }
+    .sim-inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; }
+    .sim-field label { display: block; font-weight: 700; font-size: 0.88rem; margin-bottom: 6px; }
+    .sim-field input, .sim-field select { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.96rem; background: #fff; }
+    .sim-source-badge { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 700; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; }
+    .sim-source-badge.fallback { background: #fffbeb; color: #b45309; border-color: #fde68a; }
+    .sim-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(235px, 1fr)); gap: 16px; margin-top: 22px; }
+    .statut-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; position: relative; }
+    .statut-card.best { border: 2px solid #2563eb; box-shadow: 0 8px 24px rgba(37,99,235,0.09); }
+    .best-tag { position: absolute; top: -11px; right: 14px; background: #2563eb; color: #fff; font-size: 0.72rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+    .statut-net { font-size: 1.65rem; font-weight: 800; color: #0f172a; margin: 8px 0 4px; }
+    .statut-sub { font-size: 0.85rem; color: var(--muted); margin: 0 0 12px; }
+    .metric-row { display: flex; justify-content: space-between; font-size: 0.86rem; padding: 6px 0; border-top: 1px solid #f1f5f9; }
+    .alert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 16px; margin-top: 22px; }
+    .alert-box { border-radius: 12px; padding: 18px; border: 1px solid var(--border); background: #f8fafc; }
+    .alert-box.warn { background: #fffbeb; border-color: #fcd34d; }
+    .alert-box.ok { background: #ecfdf5; border-color: #6ee7b7; }
+    .pa-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; margin-top: 16px; }
+    .pa-mini { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; }
+    .cta-dark { background: #0f172a; color: #f8fafc; border-radius: 14px; padding: 24px; margin-top: 28px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
+    .cta-dark h3 { color: #fff; margin: 0 0 6px; }
+    .cta-dark p { color: #cbd5e1; margin: 0; max-width: 600px; }
+    .btn-white { background: #fff; color: #0f172a; padding: 10px 15px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-lockup" href="./index.html" aria-label="YGN — FacturKit Accueil">
+        <span class="brand-mark" aria-hidden="true">FK</span>
+        <span class="brand-text">
+          <span class="brand-name">YGN — FacturKit</span>
+          <span class="brand-sub">Factur-X 2026–2027 &amp; Pilotage TPE</span>
+        </span>
+      </a>
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a class="nav-link" href="./audit-facture-gratuit.html?mode=fx">Inspecteur Factur-X</a>
+        <a class="nav-link" href="./comparateur-pa-2026.html">Comparateur PA</a>
+        <a class="nav-link" href="./simulateur-statut-urssaf-2026.html">Simulateur URSSAF</a>
+        <a class="nav-link" href="./metiers/index.html">50 Métiers (NAF)</a>
+        <a class="btn-header" href="./index.html#distributeur-b2b">Kits dès 19 €</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="sim-hero">
+      <div class="container">
+        <div class="eyebrow">100 % Gratuit • API Officielle URSSAF + Fallback 2026 hors-ligne • Zéro email requis</div>
+        <h1>Simulateur Statut Juridique, URSSAF &amp; Seuils TVA 2026</h1>
+        <p class="hero-lead">
+          Comparez instantanément votre revenu net annuel en <strong>Micro-entreprise</strong>, <strong>EI au Réel</strong>, <strong>EURL (TNS IS)</strong> et <strong>SASU (Assimilé salarié)</strong> grâce à l'API officielle <code>mon-entreprise.urssaf.fr</code>, vérifiez votre seuil de franchise en base de TVA (art. 293 B) et votre statut <strong>Factur-X 2026–2027</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="sim-panel">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;">
+            <strong style="font-size:1.05rem;">Vos paramètres d'activité annuels (HT)</strong>
+            <span id="sim-source-badge" class="sim-source-badge">Connexion API officielle URSSAF…</span>
+          </div>
+
+          <div class="sim-inputs">
+            <div class="sim-field">
+              <label for="sim-ca">Chiffre d'affaires annuel HT (€)</label>
+              <input id="sim-ca" type="number" min="5000" max="500000" step="1000" value="65000">
+            </div>
+            <div class="sim-field">
+              <label for="sim-charges">Charges pro déductibles / an (€)</label>
+              <input id="sim-charges" type="number" min="0" max="300000" step="500" value="10000">
+            </div>
+            <div class="sim-field">
+              <label for="sim-nature">Nature d'activité</label>
+              <select id="sim-nature">
+                <option value="bnc" selected>Prestations libérales / Conseil / IT (BNC)</option>
+                <option value="bic_service">Prestations commerciales / Artisanat (BIC Services)</option>
+                <option value="bic_vente">Achat-revente / E-commerce (BIC Vente)</option>
+              </select>
+            </div>
+            <div class="sim-field" style="display:flex;align-items:flex-end;">
+              <button id="sim-run-btn" type="button" class="btn-primary" style="width:100%;cursor:pointer;">Recalculer en direct</button>
+            </div>
+          </div>
+
+          <div id="sim-cards" class="sim-cards" aria-live="polite"></div>
+
+          <div class="alert-grid">
+            <div id="tva-alert-box" class="alert-box">
+              <h3 style="margin:0 0 6px;font-size:1rem;">Contrôle Franchise en base de TVA (art. 293 B CGI)</h3>
+              <p id="tva-alert-text" style="margin:0;font-size:0.9rem;line-height:1.55;"></p>
+            </div>
+            <div class="alert-box warn">
+              <h3 style="margin:0 0 6px;font-size:1rem;">Alerte Réforme Factur-X 2026–2027 (LFI 2026 art. 123)</h3>
+              <p style="margin:0;font-size:0.9rem;line-height:1.55;">
+                Quel que soit votre statut (Micro, EI, EURL ou SASU), la <strong>réception électronique via une PA immatriculée</strong> est obligatoire depuis le <strong>01/09/2026</strong> (amende 500 € -> 1 000 €/trim.), avant l'émission <strong>Factur-X 1.09.2</strong> au <strong>01/09/2027</strong>.
+                <a href="./comparateur-pa-2026.html" style="font-weight:700;">Voir les 159 PA →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:34px;">
+          <h2>Plateformes Agréées (PA) &amp; Comptabilité recommandées pour votre profil</h2>
+          <p style="color:var(--muted);margin-top:4px;">Solutions immatriculées DGFiP ou spécialisées indépendants, mises à jour selon votre statut optimal.</p>
+          <div id="sim-pa-grid" class="pa-grid"></div>
+          <p style="font-size:0.8rem;color:var(--muted);margin-top:10px;">Transparence : comparatif indépendant ; certains liens peuvent utiliser un suivi affilié sans aucun surcoût pour vous.</p>
+        </div>
+
+        <div class="cta-dark">
+          <div>
+            <h3>Pilotez vos seuils URSSAF, TVA &amp; Factur-X 2027 en local sans abonnement</h3>
+            <p>Téléchargez le classeur Excel automatisé Pilotage 2027 (<strong>19 €</strong>), le Studio Factur-X EN 16931 hors-ligne (<strong>49 €</strong>), la Suite Pro + n8n (<strong>119 €</strong>) ou le Cockpit Bilingue FR+EN Gumroad (<strong>79 €</strong>).</p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;">
+            <a class="btn-white" href="https://buy.stripe.com/3cIaEWfnS8ifbTBdXH2cg05" target="_blank" rel="noopener">Pack Pilotage 19 €</a>
+            <a class="btn-primary" href="https://buy.stripe.com/4gMcN40sY41Zf5N1aV2cg06" target="_blank" rel="noopener">Studio Factur-X 49 €</a>
+            <a class="btn-white" href="https://buy.stripe.com/aFa8wO0sY1TRbTB1aV2cg07" target="_blank" rel="noopener">Suite Pro 119 €</a>
+            <a class="btn-white" href="https://yannabadi.gumroad.com/l/hfxuuz" target="_blank" rel="noopener">Gumroad 79 €</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        <strong>YGN — FacturKit 2027</strong> ·
+        <a href="./index.html">Accueil</a> ·
+        <a href="./audit-facture-gratuit.html?mode=fx">Inspecteur Factur-X</a> ·
+        <a href="./comparateur-pa-2026.html">Comparateur PA</a> ·
+        <a href="./metiers/index.html">50 Métiers (NAF)</a> ·
+        <a href="./en.html">English</a>
+      </p>
+      <p style="font-size:0.8rem;color:var(--muted);margin-top:8px;">Estimation indicative pour 1 part fiscale célibataire, connectée à l'API ouverte URSSAF <code>mon-entreprise.urssaf.fr/api/v1/evaluate</code> avec secours barème 2026 hors-ligne. Ne remplace pas un conseil personnalisé d'expert-comptable.</p>
+    </div>
+  </footer>
+
+  <script src="./pa-affiliates.js"></script>
+  <script>
+  (function () {
+    "use strict";
+
+    var API_URL = "https://mon-entreprise.urssaf.fr/api/v1/evaluate";
+    var fmt = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+
+    function estimateIrSingle(taxableIncome) {
+      var r = Math.max(0, taxableIncome);
+      var brackets = [
+        [11497, 0],
+        [29315, 0.11],
+        [83823, 0.30],
+        [180294, 0.41],
+        [Infinity, 0.45]
+      ];
+      var tax = 0;
+      var prev = 0;
+      for (var i = 0; i < brackets.length; i++) {
+        var cap = brackets[i][0];
+        var rate = brackets[i][1];
+        if (r > prev) {
+          tax += (Math.min(r, cap) - prev) * rate;
+          prev = cap;
+        }
+      }
+      return Math.round(tax);
+    }
+
+    function offlineCompute(ca, charges, nature) {
+      var microCap = nature === "bic_vente" ? 188700 : 77700;
+      var microRate = nature === "bnc" ? 0.258 : (nature === "bic_service" ? 0.212 : 0.123);
+      var microAbat = nature === "bnc" ? 0.34 : (nature === "bic_service" ? 0.50 : 0.71);
+      var microCot = Math.round(ca * microRate);
+      var microNetBefore = Math.max(0, ca - charges - microCot);
+      var microTaxable = Math.max(0, ca * (1 - microAbat));
+      var microIr = estimateIrSingle(microTaxable);
+      var microNetAfter = Math.max(0, microNetBefore - microIr);
+
+      var profit = Math.max(0, ca - charges);
+      // EI Réel / EURL TNS (~31.5% du brut disponible -> ~45% du net)
+      var tnsCot = Math.round(profit * 0.313);
+      var tnsNetBefore = Math.max(0, profit - tnsCot);
+      var tnsIr = estimateIrSingle(tnsNetBefore);
+      var tnsNetAfter = Math.max(0, tnsNetBefore - tnsIr);
+
+      // SASU Assimilé salarié (~44.4% du coût total employeur)
+      var sasuCot = Math.round(profit * 0.444);
+      var sasuNetBefore = Math.max(0, profit - sasuCot);
+      var sasuIr = estimateIrSingle(sasuNetBefore * 0.90);
+      var sasuNetAfter = Math.max(0, sasuNetBefore - sasuIr);
+
+      return [
+        {
+          id: "micro",
+          label: "Micro-entreprise",
+          eligible: ca <= microCap,
+          note: ca <= microCap ? "Ultra-simple · Charges non déductibles (plafond " + fmt.format(microCap) + ")" : "Plafond micro dépassé (" + fmt.format(microCap) + ")",
+          cotisations: microCot,
+          netBefore: microNetBefore,
+          netAfter: microNetAfter,
+          source: "Barème 2026"
+        },
+        {
+          id: "ei",
+          label: "EI au Réel (BNC/BIC)",
+          eligible: true,
+          note: "Charges réelles déduites (" + fmt.format(charges) + ") · Statut TNS",
+          cotisations: tnsCot,
+          netBefore: tnsNetBefore,
+          netAfter: tnsNetAfter,
+          source: "Barème 2026"
+        },
+        {
+          id: "eurl",
+          label: "EURL à l'IS (Gérant TNS)",
+          eligible: true,
+          note: "Patrimoine isolé · Optimisation rémunération + dividendes IS 15 %",
+          cotisations: tnsCot,
+          netBefore: tnsNetBefore,
+          netAfter: tnsNetAfter,
+          source: "Barème 2026"
+        },
+        {
+          id: "sasu",
+          label: "SASU (Président assimilé salarié)",
+          eligible: true,
+          note: "Régime général salarié · Dividendes sans charges sociales (PFU 30 %)",
+          cotisations: sasuCot,
+          netBefore: sasuNetBefore,
+          netAfter: sasuNetAfter,
+          source: "Barème 2026"
+        }
+      ];
+    }
+
+    async function callUrssaf(expressions, situation) {
+      var controller = new AbortController();
+      var timer = setTimeout(function () { controller.abort(); }, 6500);
+      try {
+        var resp = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify({ expressions: expressions, situation: situation }),
+          signal: controller.signal
+        });
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        var data = await resp.json();
+        return (data.evaluate || []).map(function (e) { return typeof e.nodeValue === "number" ? Math.round(e.nodeValue) : null; });
+      } finally {
+        clearTimeout(timer);
+      }
+    }
+
+    async function computeLive(ca, charges, nature) {
+      var base = offlineCompute(ca, charges, nature);
+      var profit = Math.max(0, ca - charges);
+      var natSit = nature === "bnc"
+        ? { "entreprise . activité . nature": "'libérale'", "entreprise . activité . nature . libérale . réglementée": "non" }
+        : (nature === "bic_vente"
+            ? { "entreprise . activité . nature": "'commerciale'" }
+            : { "entreprise . activité . nature": "'artisanale'" });
+
+      try {
+        var results = await Promise.all([
+          callUrssaf(
+            [
+              { "valeur": "dirigeant . auto-entrepreneur . cotisations et contributions", "unité": "€/an" },
+              { "valeur": "dirigeant . auto-entrepreneur . revenu net . après impôt", "unité": "€/an" }
+            ],
+            Object.assign({
+              "entreprise . catégorie juridique": "'EI'",
+              "entreprise . catégorie juridique . EI . auto-entrepreneur": "oui",
+              "dirigeant . auto-entrepreneur . chiffre d'affaires": ca + " €/an"
+            }, natSit)
+          ),
+          callUrssaf(
+            [
+              { "valeur": "dirigeant . indépendant . cotisations et contributions", "unité": "€/an" },
+              { "valeur": "impôt . montant", "unité": "€/an" }
+            ],
+            {
+              "entreprise . catégorie juridique": "'EI'",
+              "entreprise . catégorie juridique . EI . auto-entrepreneur": "non",
+              "entreprise . activité . nature": "'libérale'",
+              "entreprise . chiffre d'affaires": ca + " €/an",
+              "entreprise . charges": charges + " €/an"
+            }
+          ),
+          callUrssaf(
+            [
+              { "valeur": "salarié . cotisations", "unité": "€/an" },
+              { "valeur": "salarié . rémunération . net . à payer avant impôt", "unité": "€/an" },
+              { "valeur": "salarié . rémunération . net . payé après impôt", "unité": "€/an" }
+            ],
+            {
+              "entreprise . catégorie juridique": "'SAS'",
+              "entreprise . associés": "'unique'",
+              "salarié . coût total employeur": profit + " €/an"
+            }
+          )
+        ]);
+
+        // Merge verified URSSAF figures into base results
+        if (results[0][0] !== null && nature === "bnc") {
+          base[0].cotisations = results[0][0];
+          base[0].netBefore = Math.max(0, ca - charges - results[0][0]);
+          base[0].netAfter = results[0][1] !== null ? Math.max(0, results[0][1] - charges) : base[0].netAfter;
+          base[0].source = "API URSSAF LIVE";
+        }
+        if (results[1][0] !== null) {
+          var eiCot = results[1][0];
+          var eiIr = results[1][1] !== null ? results[1][1] : estimateIrSingle(Math.max(0, profit - eiCot));
+          base[1].cotisations = eiCot;
+          base[1].netBefore = Math.max(0, profit - eiCot);
+          base[1].netAfter = Math.max(0, profit - eiCot - eiIr);
+          base[1].source = "API URSSAF LIVE";
+          base[2].cotisations = eiCot;
+          base[2].netBefore = base[1].netBefore;
+          base[2].netAfter = base[1].netAfter;
+          base[2].source = "API URSSAF LIVE";
+        }
+        if (results[2][0] !== null && results[2][1] !== null) {
+          base[3].cotisations = results[2][0];
+          base[3].netBefore = results[2][1];
+          base[3].netAfter = results[2][2] !== null ? results[2][2] : base[3].netAfter;
+          base[3].source = "API URSSAF LIVE";
+        }
+        return { live: true, items: base };
+      } catch (_err) {
+        return { live: false, items: base };
+      }
+    }
+
+    function renderPaCards(bestId) {
+      var grid = document.getElementById("sim-pa-grid");
+      var catalog = window.PA_SOLUTIONS || {};
+      var keys = bestId === "micro"
+        ? ["indy", "tiime", "abby", "shine"]
+        : ["indy", "pennylane", "qonto", "axonaut"];
+      var htmlOut = "";
+      for (var i = 0; i < keys.length; i++) {
+        var s = catalog[keys[i]];
+        if (!s) continue;
+        htmlOut += '<article class="pa-mini"><div>' +
+          '<div style="font-size:0.75rem;font-weight:700;color:#047857;margin-bottom:4px;">' + s.badge + '</div>' +
+          '<h3 style="margin:0 0 4px;font-size:1rem;">' + s.name + '</h3>' +
+          '<p style="font-size:0.82rem;color:var(--muted);margin:0 0 8px;"><strong>' + s.price + '</strong></p>' +
+          '<p style="font-size:0.82rem;color:var(--muted);margin:0 0 12px;line-height:1.45;">' + s.summary + '</p>' +
+          '</div><a class="btn-outline" style="text-align:center;" href="' + s.url + '" data-affiliate-slot="' + s.slot + '" target="_blank" rel="noopener noreferrer">Voir ' + s.name + ' →</a></article>';
+      }
+      grid.innerHTML = htmlOut;
+      if (window.applyFacturKitAffiliates) window.applyFacturKitAffiliates(grid);
+    }
+
+    async function refresh() {
+      var ca = Math.max(1000, Number(document.getElementById("sim-ca").value) || 65000);
+      var charges = Math.max(0, Math.min(ca, Number(document.getElementById("sim-charges").value) || 0));
+      var nature = document.getElementById("sim-nature").value;
+      var badge = document.getElementById("sim-source-badge");
+      badge.textContent = "Calcul en cours (API URSSAF)…";
+      badge.className = "sim-source-badge";
+
+      var out = await computeLive(ca, charges, nature);
+      if (out.live) {
+        badge.textContent = "✓ Source LIVE : API officielle URSSAF mon-entreprise.fr";
+        badge.className = "sim-source-badge";
+      } else {
+        badge.textContent = "⚡ Mode autonome hors-ligne (barème URSSAF 2026)";
+        badge.className = "sim-source-badge fallback";
+      }
+
+      var eligible = out.items.filter(function (x) { return x.eligible; });
+      eligible.sort(function (a, b) { return b.netAfter - a.netAfter; });
+      var bestId = eligible.length ? eligible[0].id : "eurl";
+
+      var cardsEl = document.getElementById("sim-cards");
+      cardsEl.innerHTML = out.items.map(function (item) {
+        var isBest = item.id === bestId && item.eligible;
+        var ratio = ca > 0 ? Math.round((item.netAfter / ca) * 100) : 0;
+        return '<article class="statut-card' + (isBest ? ' best' : '') + '">' +
+          (isBest ? '<span class="best-tag">Net optimal estimé</span>' : '') +
+          '<h2 style="font-size:1.05rem;margin:0;">' + item.label + '</h2>' +
+          '<div class="statut-net">' + fmt.format(item.netAfter) + ' <small style="font-size:0.78rem;font-weight:600;color:var(--muted);">/ an net</small></div>' +
+          '<p class="statut-sub">' + fmt.format(Math.round(item.netAfter / 12)) + ' / mois après IR · ' + ratio + ' % du CA</p>' +
+          '<div class="metric-row"><span>Cotisations URSSAF</span><strong>' + fmt.format(item.cotisations) + '</strong></div>' +
+          '<div class="metric-row"><span>Net avant impôt</span><strong>' + fmt.format(item.netBefore) + '</strong></div>' +
+          '<div class="metric-row"><span>Source calcul</span><span>' + item.source + '</span></div>' +
+          '<p style="font-size:0.8rem;color:var(--muted);margin:10px 0 0;line-height:1.45;">' + item.note + '</p>' +
+        '</article>';
+      }).join("");
+
+      // TVA art. 293 B threshold alert
+      var tvaBase = nature === "bic_vente" ? 85000 : 37500;
+      var tvaMaj = nature === "bic_vente" ? 93500 : 41250;
+      var tvaBox = document.getElementById("tva-alert-box");
+      var tvaText = document.getElementById("tva-alert-text");
+      if (ca > tvaMaj) {
+        tvaBox.className = "alert-box warn";
+        tvaText.innerHTML = "<strong>Assujettissement TVA immédiat :</strong> votre CA (" + fmt.format(ca) + ") dépasse le seuil majoré (" + fmt.format(tvaMaj) + "). Facturez la TVA dès le jour de dépassement et supprimez la mention art. 293 B dans vos Factur-X.";
+      } else if (ca > tvaBase) {
+        tvaBox.className = "alert-box warn";
+        tvaText.innerHTML = "<strong>Zone de tolérance TVA :</strong> votre CA dépasse le seuil de base (" + fmt.format(tvaBase) + ") mais reste sous le seuil majoré (" + fmt.format(tvaMaj) + "). Préparez votre bascule TVA au 1er janvier suivant.";
+      } else {
+        tvaBox.className = "alert-box ok";
+        tvaText.innerHTML = "<strong>Éligible Franchise en base de TVA (art. 293 B CGI) :</strong> sous le seuil de base (" + fmt.format(tvaBase) + "). Conservez la mention obligatoire « TVA non applicable, art. 293 B du CGI » et votre PA de réception.";
+      }
+
+      renderPaCards(bestId);
+    }
+
+    document.getElementById("sim-run-btn").addEventListener("click", refresh);
+    document.getElementById("sim-nature").addEventListener("change", refresh);
+    refresh();
+  })();
+  </script>
+</body>
+</html>

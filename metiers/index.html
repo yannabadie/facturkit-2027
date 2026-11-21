@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factur-X 2026–2027 par Métier &amp; Code NAF — 50 Guides Pratiques | FacturKit</title>
+  <meta name="description" content="50 fiches pratiques Facturation Électronique 2026–2027 par métier et code NAF : réception 01/09/2026, émission Factur-X 1.09.2 au 01/09/2027, règles TVA/e-reporting et choix de Plateforme Agréée.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yannabadie.github.io/facturkit-2027/metiers/">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "name": "Annuaire Factur-X 2026–2027 par Métier & Code NAF (50 Fiches)",
+      "url": "https://yannabadie.github.io/facturkit-2027/metiers/",
+      "inLanguage": "fr-FR",
+      "numberOfItems": 50
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "FacturKit 2027",
+          "item": "https://yannabadie.github.io/facturkit-2027/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "50 Métiers & Codes NAF",
+          "item": "https://yannabadie.github.io/facturkit-2027/metiers/"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    :root { --border: var(--border-light, #E2E0D8); --muted: var(--ink-muted, #64748B); --accent: var(--accent-blue, #1D4ED8); --text: var(--ink-primary, #0F172A); }
+    .metier-hero { padding: 48px 0 36px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); }
+    .breadcrumb { font-size: 0.85rem; color: var(--muted); margin-bottom: 14px; }
+    .breadcrumb a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .naf-pill { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; margin-bottom: 12px; }
+    .metier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 22px; }
+    .info-box { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; box-shadow: 0 2px 8px rgba(15,23,42,0.03); }
+    .info-box h3 { margin-top: 0; font-size: 1.05rem; margin-bottom: 10px; }
+    .pa-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; margin-top: 18px; }
+    .pa-rec-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; }
+    .pa-rec-badge { display: inline-block; font-size: 0.76rem; font-weight: 700; color: #047857; background: #ecfdf5; border: 1px solid #a7f3d0; padding: 3px 9px; border-radius: 999px; margin-bottom: 8px; }
+    .cta-strip { background: #0f172a; color: #f8fafc; border-radius: 14px; padding: 26px; margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; }
+    .cta-strip h3 { color: #fff; margin: 0 0 6px; }
+    .cta-strip p { color: #cbd5e1; margin: 0; max-width: 620px; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn-light { background: #fff; color: #0f172a; padding: 11px 16px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.92rem; }
+    .btn-accent-solid { background: #2563eb; color: #fff; padding: 11px 16px; border-radius: 8px; font-weight: 700; text-decoration: none; font-size: 0.92rem; }
+    .check-list { padding-left: 20px; margin: 10px 0 0; }
+    .check-list li { margin-bottom: 9px; line-height: 1.55; }
+    .sibling-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin-top: 14px; }
+    .sibling-link { display: block; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; background: #fff; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; }
+    .sibling-link span { display: block; font-size: 0.78rem; color: var(--muted); font-weight: 500; margin-top: 2px; }
+    .sibling-link:hover { border-color: #2563eb; }
+    .dir-controls { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; align-items: center; }
+    .dir-search { flex: 1 1 260px; padding: 11px 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.95rem; }
+    .dir-pill { padding: 7px 13px; border-radius: 999px; border: 1px solid var(--border); background: #fff; font-weight: 600; font-size: 0.84rem; cursor: pointer; }
+    .dir-pill[aria-pressed="true"] { background: #0f172a; color: #fff; border-color: #0f172a; }
+    .metier-card { display: block; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 18px; text-decoration: none; color: inherit; transition: border-color 0.15s ease; }
+    .metier-card:hover { border-color: #2563eb; }
+    .disclosure-note { font-size: 0.8rem; color: var(--muted); margin-top: 12px; }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand-lockup" href="../index.html" aria-label="YGN — FacturKit Accueil">
+        <span class="brand-mark" aria-hidden="true">FK</span>
+        <span class="brand-text">
+          <span class="brand-name">YGN — FacturKit</span>
+          <span class="brand-sub">Factur-X 2026–2027 &amp; Pilotage TPE</span>
+        </span>
+      </a>
+      <nav class="header-nav" aria-label="Navigation principale">
+        <a class="nav-link" href="../audit-facture-gratuit.html?mode=fx">Inspecteur Factur-X</a>
+        <a class="nav-link" href="../comparateur-pa-2026.html">Comparateur PA</a>
+        <a class="nav-link" href="../simulateur-statut-urssaf-2026.html">Simulateur URSSAF</a>
+        <a class="nav-link" href="../metiers/index.html">50 Métiers (NAF)</a>
+        <a class="btn-header" href="../index.html#distributeur-b2b">Kits dès 19 €</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="metier-hero">
+      <div class="container">
+        <div class="breadcrumb"><a href="../index.html">FacturKit 2027</a> › 50 Métiers &amp; Codes NAF</div>
+        <div class="naf-pill">Annuaire pSEO 2026–2027 · 50 Codes NAF couverts · 159 PA DGFiP</div>
+        <h1>Facture électronique &amp; Factur-X 2026–2027 par métier (50 fiches NAF)</h1>
+        <p class="hero-lead">
+          Trouvez les obligations exactes de votre secteur (autoliquidation BTP, exonération santé/formation, e-reporting B2C/export, acomptes, notes d'honoraires) et la Plateforme Agréée la mieux adaptée à votre profil.
+        </p>
+        <div class="hero-cta-row">
+          <a href="../comparateur-pa-2026.html" class="btn-primary">Ouvrir le Comparateur PA 2026</a>
+          <a href="../simulateur-statut-urssaf-2026.html" class="btn-outline">Simulateur URSSAF &amp; Statut 2026</a>
+          <a href="../audit-facture-gratuit.html?mode=fx" class="btn-outline">Inspecteur Factur-X Gratuit</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="dir-controls">
+          <input id="metier-search" class="dir-search" type="search" placeholder="Filtrer par métier ou code NAF (ex. 62.01Z, plombier, médecin, e-commerce)..." aria-label="Rechercher un métier ou code NAF">
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <button class="dir-pill" type="button" data-sector="all" aria-pressed="true">Tous (50)</button> <button class="dir-pill" type="button" data-sector="Agriculture &amp; Production" aria-pressed="false">Agriculture &amp; Production (1)</button> <button class="dir-pill" type="button" data-sector="Architecture &amp; Droit" aria-pressed="false">Architecture &amp; Droit (6)</button> <button class="dir-pill" type="button" data-sector="BTP &amp; Artisanat" aria-pressed="false">BTP &amp; Artisanat (7)</button> <button class="dir-pill" type="button" data-sector="Commerce &amp; HCR" aria-pressed="false">Commerce &amp; HCR (8)</button> <button class="dir-pill" type="button" data-sector="Conseil &amp; Finance" aria-pressed="false">Conseil &amp; Finance (3)</button> <button class="dir-pill" type="button" data-sector="Formation &amp; Création" aria-pressed="false">Formation &amp; Création (6)</button> <button class="dir-pill" type="button" data-sector="Santé &amp; Libéral" aria-pressed="false">Santé &amp; Libéral (8)</button> <button class="dir-pill" type="button" data-sector="Services B2B" aria-pressed="false">Services B2B (2)</button> <button class="dir-pill" type="button" data-sector="Tech &amp; Digital" aria-pressed="false">Tech &amp; Digital (4)</button> <button class="dir-pill" type="button" data-sector="Transport &amp; Immobilier" aria-pressed="false">Transport &amp; Immobilier (5)</button>
+          </div>
+        </div>
+        <p id="dir-count" style="font-size:0.88rem;color:var(--muted);margin:0 0 14px;">50 / 50 fiches métiers affichées</p>
+
+        <div id="metier-list" class="metier-grid">
+          <a class="metier-card" href="./expert-comptable.html" data-sector="Conseil &amp; Finance" data-search="expert-comptable &amp; cabinet comptable expert-comptable 69.20z conseil &amp; finance assujetti tva 20 % (honoraires, lettres de mission récurrentes)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 69.20Z · Conseil &amp; Finance</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Expert-comptable &amp; Cabinet comptable</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B (e-invoicing) + multi-mandats clients</p>
+          </a>
+          <a class="metier-card" href="./developpeur-freelance.html" data-sector="Tech &amp; Digital" data-search="développeur freelance &amp; ingénieur logiciel développeur freelance 62.01z tech &amp; digital franchise art. 293 b ou tva 20 % / autoliquidation intracommunautaire (art. 283-2 cgi)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 62.01Z · Tech &amp; Digital</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Développeur freelance &amp; Ingénieur logiciel</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B France (e-invoicing) + Clients UE/US (e-reporting international)</p>
+          </a>
+          <a class="metier-card" href="./consultant-it.html" data-sector="Tech &amp; Digital" data-search="consultant it, cybersécurité &amp; cloud consultant it 62.02a tech &amp; digital tva 20 % sur encaissements (option débits possible)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 62.02A · Tech &amp; Digital</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Consultant IT, Cybersécurité &amp; Cloud</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B grands comptes / ESN (e-invoicing) + Secteur public (Chorus Pro)</p>
+          </a>
+          <a class="metier-card" href="./agence-web.html" data-sector="Tech &amp; Digital" data-search="agence web, studio digital &amp; esn tpe agence web 62.01z tech &amp; digital tva 20 % (acomptes 30–50 %, soldes, hébergement annuel)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 62.01Z · Tech &amp; Digital</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Agence web, Studio digital &amp; ESN TPE</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B France (e-invoicing) + Abonnements maintenance récurrents + Export</p>
+          </a>
+          <a class="metier-card" href="./data-scientist-ia.html" data-sector="Tech &amp; Digital" data-search="data scientist, consultant ia &amp; automatisation consultant ia &amp; data 62.02a tech &amp; digital tva 20 % ou autoliquidation b2b ue / hors champ art. 259-1 cgi hors ue">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 62.02A · Tech &amp; Digital</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Data Scientist, Consultant IA &amp; Automatisation</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B France + Export UE/US + Prestations SaaS/API</p>
+          </a>
+          <a class="metier-card" href="./consultant-strategie-gestion.html" data-sector="Conseil &amp; Finance" data-search="consultant en stratégie, management &amp; organisation consultant gestion 70.22z conseil &amp; finance tva 20 % sur encaissements (ou franchise 293 b en démarrage)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 70.22Z · Conseil &amp; Finance</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Consultant en stratégie, management &amp; organisation</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B PME/ETI/Grands comptes (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./artisan-batiment-macon.html" data-sector="BTP &amp; Artisanat" data-search="artisan du bâtiment &amp; maçonnerie générale artisan bâtiment 43.99c btp &amp; artisanat multi-taux (20 %, 10 % rénovation, 5,5 % énergétique) + autoliquidation btp (art. 283-2 nonies)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 43.99C · BTP &amp; Artisanat</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Artisan du bâtiment &amp; Maçonnerie générale</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Mixte B2B (sous-traitance, promoteurs) + B2C particuliers (e-reporting)</p>
+          </a>
+          <a class="metier-card" href="./plombier-chauffagiste.html" data-sector="BTP &amp; Artisanat" data-search="plombier, chauffagiste &amp; installateur thermique (rge) plombier-chauffagiste 43.22a btp &amp; artisanat tva 5,5 % (rénovation énergétique pac/chaudière), 10 % (logement &gt; 2 ans), 20 % (neuf/pro)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 43.22A · BTP &amp; Artisanat</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Plombier, Chauffagiste &amp; Installateur thermique (RGE)</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C dépannage/rénovation (e-reporting) + B2B syndics/entreprises (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./electricien.html" data-sector="BTP &amp; Artisanat" data-search="électricien bâtiment, domotique &amp; irve électricien 43.21a btp &amp; artisanat tva 5,5 % (bornes irve/rénovation énergétique), 10 % (rénovation), 20 % + autoliquidation sous-traitance">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 43.21A · BTP &amp; Artisanat</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Électricien bâtiment, Domotique &amp; IRVE</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B entreprises/promoteurs (e-invoicing) + B2C particuliers (e-reporting)</p>
+          </a>
+          <a class="metier-card" href="./peintre-batiment.html" data-sector="BTP &amp; Artisanat" data-search="peintre en bâtiment &amp; revêtements sols/murs peintre en bâtiment 43.34z btp &amp; artisanat tva 10 % (logement &gt; 2 ans), 20 % (locaux pro/neuf) ou franchise 293 b">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 43.34Z · BTP &amp; Artisanat</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Peintre en bâtiment &amp; Revêtements sols/murs</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C particuliers (e-reporting) + B2B assurances/syndics/entreprises (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./menuisier-charpentier.html" data-sector="BTP &amp; Artisanat" data-search="menuisier, charpentier &amp; agenceur menuisier-charpentier 43.32a btp &amp; artisanat tva 5,5 % (fenêtres isolantes rge), 10 % (rénovation), 20 % (neuf/pro) + autoliquidation btp">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 43.32A · BTP &amp; Artisanat</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Menuisier, Charpentier &amp; Agenceur</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B constructeurs/architectes (e-invoicing) + B2C particuliers (e-reporting)</p>
+          </a>
+          <a class="metier-card" href="./couvreur-zingueur.html" data-sector="BTP &amp; Artisanat" data-search="couvreur, zingueur &amp; étanchéité toiture couvreur-zingueur 43.91b btp &amp; artisanat tva 5,5 % (isolation toiture rge), 10 % (réfection &gt; 2 ans), 20 % (neuf/locaux pro)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 43.91B · BTP &amp; Artisanat</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Couvreur, Zingueur &amp; Étanchéité toiture</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C particuliers + B2B copropriétés/promoteurs (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./paysagiste.html" data-sector="BTP &amp; Artisanat" data-search="paysagiste, entretien d&#x27;espaces verts &amp; sap paysagiste 81.30z btp &amp; artisanat tva 20 % (création &amp; entretien jardinage) · tva 10 % (certains travaux forestiers/agricoles)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 81.30Z · BTP &amp; Artisanat</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Paysagiste, Entretien d&#x27;espaces verts &amp; SAP</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C (petit jardinage SAP / aménagements) + B2B entreprises &amp; collectivités</p>
+          </a>
+          <a class="metier-card" href="./architecte.html" data-sector="Architecture &amp; Droit" data-search="architecte dplg / hmonp &amp; maître d&#x27;œuvre architecte 71.11z architecture &amp; droit tva 20 % (10 % uniquement si maîtrise d&#x27;œuvre liée à travaux éligibles &gt; 2 ans)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 71.11Z · Architecture &amp; Droit</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Architecte DPLG / HMONP &amp; Maître d&#x27;œuvre</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B promoteurs/entreprises + B2G collectivités (Chorus Pro) + B2C particuliers</p>
+          </a>
+          <a class="metier-card" href="./bureau-etudes-ingenierie.html" data-sector="Architecture &amp; Droit" data-search="bureau d&#x27;études techniques (bet) &amp; ingénierie bureau d&#x27;études 71.12b architecture &amp; droit tva 20 % sur encaissements (option débits fréquente en société)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 71.12B · Architecture &amp; Droit</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Bureau d&#x27;études techniques (BET) &amp; Ingénierie</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B donneurs d&#x27;ordre / industrie / BTP + B2G (Chorus Pro)</p>
+          </a>
+          <a class="metier-card" href="./geometre-expert.html" data-sector="Architecture &amp; Droit" data-search="géomètre-expert &amp; topographe géomètre-expert 71.12a architecture &amp; droit tva 20 % (prestations d&#x27;expertise, bornages, copropriétés)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 71.12A · Architecture &amp; Droit</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Géomètre-expert &amp; Topographe</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B promoteurs/notaires/aménageurs + B2G collectivités + B2C bornages</p>
+          </a>
+          <a class="metier-card" href="./avocat.html" data-sector="Architecture &amp; Droit" data-search="avocat &amp; cabinet d&#x27;avocats avocat 69.10z architecture &amp; droit tva 20 % sur encaissements (provisions, honoraires au temps passé ou résultat) + débours">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 69.10Z · Architecture &amp; Droit</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Avocat &amp; Cabinet d&#x27;avocats</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B entreprises (e-invoicing) + B2C particuliers (e-reporting) + Aide juridictionnelle (B2G)</p>
+          </a>
+          <a class="metier-card" href="./notaire.html" data-sector="Architecture &amp; Droit" data-search="étude notariale &amp; notaire notaire 69.10z architecture &amp; droit tva 20 % sur émoluments/honoraires · débours publics &amp; droits d&#x27;enregistrement hors tva">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 69.10Z · Architecture &amp; Droit</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Étude notariale &amp; Notaire</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Réception fournisseurs B2B (LIVE 2026) + Actes B2B/B2C &amp; débours publics</p>
+          </a>
+          <a class="metier-card" href="./commissaire-justice.html" data-sector="Architecture &amp; Droit" data-search="commissaire de justice (ex-huissier / commissaire-priseur) commissaire de justice 69.10z architecture &amp; droit tva 20 % sur actes et constats + débours réglementés hors tva">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 69.10Z · Architecture &amp; Droit</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Commissaire de justice (ex-Huissier / Commissaire-priseur)</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B créanciers/entreprises (e-invoicing) + B2C particuliers (e-reporting)</p>
+          </a>
+          <a class="metier-card" href="./medecin-liberal.html" data-sector="Santé &amp; Libéral" data-search="médecin libéral (généraliste &amp; spécialiste) médecin libéral 86.21z santé &amp; libéral exonération tva soins médicaux (art. 261-4-1° cgi) · tva 20 % sur expertises/esthétique">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 86.21Z · Santé &amp; Libéral</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Médecin libéral (Généraliste &amp; Spécialiste)</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Actes de soins exonérés (hors e-invoicing/e-reporting) · Réception fournisseurs OBLIGATOIRE 2026</p>
+          </a>
+          <a class="metier-card" href="./infirmier-liberal.html" data-sector="Santé &amp; Libéral" data-search="infirmier libéral (idel) &amp; cabinet infirmier infirmier libéral 86.90d santé &amp; libéral exonéré de tva sur les soins (art. 261-4-1° cgi)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 86.90D · Santé &amp; Libéral</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Infirmier libéral (IDEL) &amp; Cabinet infirmier</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Soins patients exonérés (SESAM-Vitale) · Réception factures fournisseurs/SCM</p>
+          </a>
+          <a class="metier-card" href="./kinesitherapeute.html" data-sector="Santé &amp; Libéral" data-search="masseur-kinésithérapeute libéral kinésithérapeute 86.90e santé &amp; libéral exonéré art. 261-4-1° (soins) · tva 20 % sur bien-être / coaching / vente de matériel">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 86.90E · Santé &amp; Libéral</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Masseur-kinésithérapeute libéral</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Soins exonérés (hors champ) + Activités bien-être/sport (taxables -&gt; e-reporting/e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./osteopathe.html" data-sector="Santé &amp; Libéral" data-search="ostéopathe d.o. &amp; chiropracteur ostéopathe 86.90f santé &amp; libéral exonéré art. 261-4-1° cgi (si titre reconnu) · attention aux ateliers bien-être en entreprise">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 86.90F · Santé &amp; Libéral</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Ostéopathe D.O. &amp; Chiropracteur</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Consultations patients (exonérées) + Interventions en entreprise B2B</p>
+          </a>
+          <a class="metier-card" href="./dentiste.html" data-sector="Santé &amp; Libéral" data-search="chirurgien-dentiste &amp; cabinet dentaire (selarl) chirurgien-dentiste 86.23z santé &amp; libéral exonéré soins art. 261-4-1° · achats prothèses/consommables/équipements lourds en e-invoicing">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 86.23Z · Santé &amp; Libéral</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Chirurgien-dentiste &amp; Cabinet dentaire (SELARL)</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Soins exonérés · Réception laboratoire prothèses &amp; fournisseurs OBLIGATOIRE</p>
+          </a>
+          <a class="metier-card" href="./pharmacien.html" data-sector="Santé &amp; Libéral" data-search="pharmacie d&#x27;officine &amp; parapharmacie pharmacien 47.73z santé &amp; libéral 4 taux simultanés (2,1 % médicaments remboursés, 5,5 %, 10 %, 20 % parapharmacie)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 47.73Z · Santé &amp; Libéral</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Pharmacie d&#x27;officine &amp; Parapharmacie</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C comptoir multi-taux (e-reporting) + Réception grossistes-répartiteurs B2B (LIVE 2026)</p>
+          </a>
+          <a class="metier-card" href="./psychologue.html" data-sector="Santé &amp; Libéral" data-search="psychologue, psychothérapeute &amp; praticien bien-être psychologue 86.90f santé &amp; libéral exonération art. 261-4-1° (psychologue diplômé d&#x27;état) · tva 20 % ou franchise 293 b pour ateliers/coaching">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 86.90F · Santé &amp; Libéral</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Psychologue, Psychothérapeute &amp; Praticien bien-être</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Consultations patients + Interventions B2B entreprises / cellules RPS</p>
+          </a>
+          <a class="metier-card" href="./veterinaire.html" data-sector="Santé &amp; Libéral" data-search="vétérinaire &amp; clinique vétérinaire vétérinaire 75.00z santé &amp; libéral tva 20 % (actes vétérinaires, médicaments et aliments — pas d&#x27;exonération médicale !)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 75.00Z · Santé &amp; Libéral</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Vétérinaire &amp; Clinique vétérinaire</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C propriétaires d&#x27;animaux (e-reporting) + B2B éleveurs/centres équestres (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./e-commerce-vente-en-ligne.html" data-sector="Commerce &amp; HCR" data-search="e-commerce, boutique shopify / woocommerce &amp; dnvb e-commerce 47.91b commerce &amp; hcr tva 20 % (ou 5,5 % alimentaire) + guichet unique oss ue au-delà de 10 000 € b2c ue">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 47.91B · Commerce &amp; HCR</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">E-commerce, Boutique Shopify / WooCommerce &amp; DNVB</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C France/UE (e-reporting + OSS TVA) + B2B revendeurs (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./commercant-detail.html" data-sector="Commerce &amp; HCR" data-search="commerçant de détail &amp; boutique physique commerçant 47.19b commerce &amp; hcr tva 20 % / 5,5 % / 10 % selon produits (logiciel de caisse conforme)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 47.19B · Commerce &amp; HCR</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Commerçant de détail &amp; Boutique physique</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C caisse (e-reporting) + Factures clients pros (e-invoicing) + Réception fournisseurs</p>
+          </a>
+          <a class="metier-card" href="./boulanger-patissier.html" data-sector="Commerce &amp; HCR" data-search="boulanger, pâtissier &amp; artisan alimentaire boulanger-pâtissier 10.71c commerce &amp; hcr multi-taux : 5,5 % (pain, pâtisserie à emporter), 10 % (snacking/sur place), 20 % (confiserie/alcool)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 10.71C · Commerce &amp; HCR</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Boulanger, Pâtissier &amp; Artisan alimentaire</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C comptoir (e-reporting) + B2B entreprises/restaurants/collectivités (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./restaurateur.html" data-sector="Commerce &amp; HCR" data-search="restaurateur, café, brasserie &amp; traiteur restaurateur 56.10a commerce &amp; hcr tva 10 % (consommation immédiate), 5,5 % (différé scellé), 20 % (alcools)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 56.10A · Commerce &amp; HCR</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Restaurateur, Café, Brasserie &amp; Traiteur</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C salle/livraison (e-reporting) + Repas d&#x27;affaires/traiteur B2B (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./hotelier-gite.html" data-sector="Commerce &amp; HCR" data-search="hôtelier, chambre d&#x27;hôtes &amp; gîte professionnel hôtelier &amp; gîte 55.10z commerce &amp; hcr tva 10 % (hébergement, petit-déjeuner), 20 % (alcools, salles séminaire) + taxe de séjour hors tva">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 55.10Z · Commerce &amp; HCR</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Hôtelier, Chambre d&#x27;hôtes &amp; Gîte professionnel</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C voyageurs (e-reporting) + Séminaires/déplacements pros B2B (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./coiffeur-barbier.html" data-sector="Commerce &amp; HCR" data-search="coiffeur, barbier &amp; salon de coiffure coiffeur-barbier 96.02a commerce &amp; hcr tva 20 % (prestations et revente produits) ou franchise 293 b (coiffeur à domicile)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 96.02A · Commerce &amp; HCR</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Coiffeur, Barbier &amp; Salon de coiffure</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C salon (e-reporting 2027) + Réception fournisseurs produits/loyer (LIVE 2026)</p>
+          </a>
+          <a class="metier-card" href="./estheticienne-bien-etre.html" data-sector="Commerce &amp; HCR" data-search="esthéticienne, institut de beauté &amp; praticien bien-être esthéticienne 96.02b commerce &amp; hcr tva 20 % ou franchise 293 b (attention cumul prestations + revente produits)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 96.02B · Commerce &amp; HCR</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Esthéticienne, Institut de beauté &amp; Praticien bien-être</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C soins &amp; vente cosmétiques (e-reporting) + Réception fournisseurs (LIVE 2026)</p>
+          </a>
+          <a class="metier-card" href="./garagiste-reparation-auto.html" data-sector="Commerce &amp; HCR" data-search="garagiste, mécanicien &amp; carrossier automobile garagiste 45.20a commerce &amp; hcr tva 20 % (pièces + main-d&#x27;œuvre) · cas particulier tva sur marge pour négoce vo">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 45.20A · Commerce &amp; HCR</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Garagiste, Mécanicien &amp; Carrossier automobile</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C automobilistes (e-reporting) + B2B flottes/loueurs/assurances (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./transporteur-routier.html" data-sector="Transport &amp; Immobilier" data-search="transporteur routier de marchandises &amp; coursier transporteur 49.41a transport &amp; immobilier tva 20 % france · autoliquidation / exonération transport international import/export">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 49.41A · Transport &amp; Immobilier</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Transporteur routier de marchandises &amp; Coursier</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B chargeurs / commissionnaires (e-invoicing) + Transport intracommunautaire (e-reporting)</p>
+          </a>
+          <a class="metier-card" href="./chauffeur-vtc-taxi.html" data-sector="Transport &amp; Immobilier" data-search="chauffeur vtc, taxi &amp; transport de voyageurs chauffeur vtc / taxi 49.32z transport &amp; immobilier tva 10 % (transport de personnes) · tva 20 % (mise à disposition avec chauffeur / commissions)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 49.32Z · Transport &amp; Immobilier</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Chauffeur VTC, Taxi &amp; Transport de voyageurs</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C passagers (e-reporting) + Courses d&#x27;affaires B2B &amp; Plateformes (Uber/Bolt)</p>
+          </a>
+          <a class="metier-card" href="./agent-immobilier.html" data-sector="Transport &amp; Immobilier" data-search="agent immobilier &amp; mandataire immobilier (iad, safti…) agent &amp; mandataire immo 68.31z transport &amp; immobilier tva 20 % sur honoraires d&#x27;entremise (exigible à la signature de l&#x27;acte authentique / encaissement)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 68.31Z · Transport &amp; Immobilier</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Agent immobilier &amp; Mandataire immobilier (IAD, Safti…)</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Mandataires : 100 % B2B vers réseau (e-invoicing) · Agences : B2C honoraires + B2B</p>
+          </a>
+          <a class="metier-card" href="./diagnostiqueur-immobilier.html" data-sector="Transport &amp; Immobilier" data-search="diagnostiqueur immobilier (dpe, amiante, électricité) diagnostiqueur immo 71.20b transport &amp; immobilier tva 20 % (prestations techniques de contrôle)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 71.20B · Transport &amp; Immobilier</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Diagnostiqueur immobilier (DPE, Amiante, Électricité)</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2C vendeurs/bailleurs (e-reporting) + B2B agences, notaires, bailleurs (e-invoicing)</p>
+          </a>
+          <a class="metier-card" href="./syndic-gestion-locative.html" data-sector="Transport &amp; Immobilier" data-search="syndic de copropriété &amp; administrateur de biens syndic &amp; gestion locative 68.32a transport &amp; immobilier tva 20 % sur honoraires de gestion/syndic · loyers nus exonérés">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 68.32A · Transport &amp; Immobilier</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Syndic de copropriété &amp; Administrateur de biens</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Réception fournisseurs copropriétés + Honoraires B2B/B2C</p>
+          </a>
+          <a class="metier-card" href="./formateur-qualiopi.html" data-sector="Formation &amp; Création" data-search="formateur indépendant &amp; organisme de formation (qualiopi) formateur qualiopi 85.59a formation &amp; création exonération tva formation professionnelle (art. 261-4-4°-a cgi avec attestation dreets) ou tva 20 %">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 85.59A · Formation &amp; Création</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Formateur indépendant &amp; Organisme de formation (Qualiopi)</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B entreprises &amp; OPCO (e-invoicing) + B2G CPF/France Travail (Chorus Pro)</p>
+          </a>
+          <a class="metier-card" href="./coach-professionnel.html" data-sector="Formation &amp; Création" data-search="coach professionnel, mentor &amp; consultant rh coach professionnel 85.59b formation &amp; création tva 20 % ou franchise art. 293 b (le coaching n&#x27;est généralement pas exonéré 261-4-4°)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 85.59B · Formation &amp; Création</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Coach professionnel, Mentor &amp; Consultant RH</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B entreprises (e-invoicing) + B2C particuliers (e-reporting)</p>
+          </a>
+          <a class="metier-card" href="./photographe-videaste.html" data-sector="Formation &amp; Création" data-search="photographe, vidéaste &amp; artiste-auteur photographe &amp; vidéaste 74.20z formation &amp; création tva 10 % (cessions de droits d&#x27;auteur) · tva 20 % (prestations techniques / mariages) · franchise 293 b">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 74.20Z · Formation &amp; Création</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Photographe, Vidéaste &amp; Artiste-auteur</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B marques/agences/presse (e-invoicing) + B2C mariages/portraits (e-reporting)</p>
+          </a>
+          <a class="metier-card" href="./graphiste-designer.html" data-sector="Formation &amp; Création" data-search="graphiste, ui/ux designer &amp; directeur artistique graphiste &amp; designer 74.10z formation &amp; création franchise 293 b · tva 10 % (cession droits d&#x27;auteur) ou 20 % (design produit/ui/ux)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 74.10Z · Formation &amp; Création</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Graphiste, UI/UX Designer &amp; Directeur artistique</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B agences/startups/PME (e-invoicing) + Clients étrangers (e-reporting international)</p>
+          </a>
+          <a class="metier-card" href="./redacteur-traducteur.html" data-sector="Formation &amp; Création" data-search="rédacteur web, copywriter &amp; traducteur indépendant rédacteur &amp; traducteur 74.30z formation &amp; création franchise art. 293 b ou tva 20 % / autoliquidation b2b intracommunautaire (des obligatoire)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 74.30Z · Formation &amp; Création</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Rédacteur web, Copywriter &amp; Traducteur indépendant</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B agences/éditeurs France (e-invoicing) + Export agences UE/US (e-reporting international)</p>
+          </a>
+          <a class="metier-card" href="./agence-communication-marketing.html" data-sector="Formation &amp; Création" data-search="agence de communication, seo &amp; marketing digital agence com &amp; seo 73.11z formation &amp; création tva 20 % · autoliquidation sur achats régies ue (google ireland, meta ireland)">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 73.11Z · Formation &amp; Création</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Agence de communication, SEO &amp; Marketing digital</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B PME/ETI/Marques (e-invoicing) + Achats médias étrangers (Meta/Google Ads)</p>
+          </a>
+          <a class="metier-card" href="./societe-nettoyage-proprete.html" data-sector="Services B2B" data-search="société de nettoyage, propreté &amp; services aux locaux société de nettoyage 81.21z services b2b tva 20 % (nettoyage locaux pros) · attention sous-traitance et contrats récurrents">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 81.21Z · Services B2B</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Société de nettoyage, Propreté &amp; Services aux locaux</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B bureaux/copropriétés/commerces (e-invoicing) + B2G (Chorus Pro)</p>
+          </a>
+          <a class="metier-card" href="./courtier-assurance-credit.html" data-sector="Conseil &amp; Finance" data-search="courtier en assurance, crédit &amp; cgp (orias) courtier &amp; cgp 66.22z conseil &amp; finance exonération tva courtage assurance/crédit (art. 261 c cgi) · tva 20 % sur conseil pur">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 66.22Z · Conseil &amp; Finance</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Courtier en assurance, Crédit &amp; CGP (ORIAS)</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Commissions courtage exonérées + Honoraires conseil taxables · Réception fournisseurs</p>
+          </a>
+          <a class="metier-card" href="./association-loi-1901.html" data-sector="Services B2B" data-search="association loi 1901 (à activités lucratives ou mixtes) association loi 1901 94.99z services b2b hors tva si gestion désintéressée non lucrative · assujettie si activités commerciales &gt; seuil annuel">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 94.99Z · Services B2B</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Association loi 1901 (à activités lucratives ou mixtes)</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">Assujettie si activités lucratives &gt; franchise · Hors champ si 100 % non lucrative</p>
+          </a>
+          <a class="metier-card" href="./agriculteur-viticulteur.html" data-sector="Agriculture &amp; Production" data-search="exploitant agricole, viticulteur &amp; producteur fermier agriculteur &amp; viticulteur 01.11z agriculture &amp; production tva agricole 5,5 % / 10 % / 20 % (alcools/vin) · remboursement forfaitaire agricole (rfa) hors tva">
+            <div class="naf-pill" style="margin-bottom:8px;">NAF 01.11Z · Agriculture &amp; Production</div>
+            <h2 style="font-size:1.05rem;margin:0 0 6px;">Exploitant agricole, Viticulteur &amp; Producteur fermier</h2>
+            <p style="font-size:0.86rem;color:var(--muted);margin:0;">B2B coopératives/négociants/restaurants (e-invoicing) + Vente directe ferme/marchés (e-reporting)</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        <strong>YGN — FacturKit 2027</strong> · Outillage local Factur-X 1.09.2 / EN 16931 sans abonnement ·
+        <a href="../index.html">Accueil</a> ·
+        <a href="../comparateur-pa-2026.html">Comparateur 159 PA</a> ·
+        <a href="../simulateur-statut-urssaf-2026.html">Simulateur URSSAF 2026</a> ·
+        <a href="../metiers/index.html">Annuaire 50 Métiers</a> ·
+        <a href="../audit-facture-gratuit.html?mode=fx">Inspecteur Gratuit</a> ·
+        <a href="../en.html">English</a>
+      </p>
+      <p class="disclosure-note">Information réglementaire indépendante (LFI 2026 art. 123, Factur-X 1.09.2 / ZUGFeRD 2.5.2, annuaire DGFiP 159 PA). Certains liens vers des Plateformes Agréées peuvent inclure un suivi partenaire sans surcoût pour vous.</p>
+    </div>
+  </footer>
+  <script>
+  (function () {
+    var search = document.getElementById("metier-search");
+    var pills = document.querySelectorAll(".dir-pill");
+    var cards = document.querySelectorAll("#metier-list .metier-card");
+    var count = document.getElementById("dir-count");
+    var activeSector = "all";
+
+    function update() {
+      var q = (search && search.value ? search.value : "").trim().toLowerCase();
+      var visible = 0;
+      for (var i = 0; i < cards.length; i++) {
+        var c = cards[i];
+        var sec = c.getAttribute("data-sector");
+        var hay = c.getAttribute("data-search") || "";
+        var ok = (activeSector === "all" || sec === activeSector) && (!q || hay.indexOf(q) !== -1);
+        c.hidden = !ok;
+        if (ok) visible++;
+      }
+      if (count) count.textContent = visible + " / " + cards.length + " fiches métiers affichées";
+    }
+
+    if (search) search.addEventListener("input", update);
+    for (var j = 0; j < pills.length; j++) {
+      pills[j].addEventListener("click", function (ev) {
+        var btn = ev.currentTarget;
+        activeSector = btn.getAttribute("data-sector") || "all";
+        for (var k = 0; k < pills.length; k++) {
+          pills[k].setAttribute("aria-pressed", pills[k] === btn ? "true" : "false");
+        }
+        update();
+      });
+    }
+  })();
+  </script>
+</body>
+</html>
